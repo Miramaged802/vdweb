@@ -1,364 +1,581 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>وصفات التصنيع الزراعي</title>
     <!-- Bootstrap 5 RTL CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.rtl.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.rtl.min.css"
+    />
     <!-- Google Fonts - Tajawal for Arabic -->
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<body>
-<!-- Navigation for Home.html -->
-<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
-    <div class="container">
+  <body>
+    <!-- Navigation for Home.html -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+      <div class="container">
         <div class="logo-container">
-            <div class="logo-text d-flex align-items-center" style="gap: 15px;">
-                <img src="assets/logo.jpg" 
-                    alt="Logo" 
-                    style="width: 60px; height: 60px;" 
-                    class="ms-2 rounded-circle">
-                <div class="text-end" style="text-align: right;">
-                    <h1 class="logo-main m-0" style="font-size: 1.25rem;">العلماء المتشردون</h1>
-                    <p class="logo-subtitle m-0" style="font-size: 0.9rem;">للتنمية العلمية</p>
-                </div>
+          <div class="logo-text d-flex align-items-center" style="gap: 15px">
+            <img
+              src="assets/logo.jpg"
+              alt="Logo"
+              style="width: 60px; height: 60px"
+              class="ms-2 rounded-circle"
+            />
+            <div class="text-end" style="text-align: right">
+              <h1 class="logo-main m-0" style="font-size: 1.25rem">
+                العلماء المتشردون
+              </h1>
+              <p class="logo-subtitle m-0" style="font-size: 0.9rem">
+                للتنمية العلمية
+              </p>
             </div>
+          </div>
         </div>
-        
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link active fw-bold" href="Home.html">الرئيسية</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="Agriculture.html">الزراعية</a>
-                </li>
-                <li class="nav-item">
-                        <a class="nav-link " href="chemical.html">الكيميائية</a>
-                    </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="Contact.html">اتصل بنا</a>
-                </li>
-            </ul>
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active fw-bold" href="Home.html">الرئيسية</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Agriculture.html">الزراعية</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="chemical.html">الكيميائية</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Contact.html">اتصل بنا</a>
+            </li>
+          </ul>
         </div>
-    </div>
-</nav>
+      </div>
+    </nav>
 
     <!-- Hero Section with Parallax and Animation -->
-    <section id="hero-section" class="hero text-white text-center py-5" data-aos="zoom-in" data-aos-duration="1500">
-        <div class="container">
-            <h1 class="display-3 fw-bold animated-text">اكتشف أفضل الوصفات بأحدث التقنيات</h1>
-            <p class="lead fs-3 mb-4 animated-text">نقدم لك كل ما تحتاجه من وصفات طبية، غذائية، وكيميائية.</p>
-            <a href="#recipes" class="btn btn-lg">استكشف الآن</a>
-        </div>
+    <section
+      id="hero-section"
+      class="hero text-white text-center py-5"
+      data-aos="zoom-in"
+      data-aos-duration="1500"
+    >
+      <div class="container position-relative">
+        <h1 class="display-3 fw-bold animated-text">
+          اكتشف أفضل الوصفات بأحدث التقنيات
+        </h1>
+        <p class="lead fs-3 mb-4 animated-text">
+          نقدم لك كل ما تحتاجه من وصفات طبية، غذائية، وكيميائية.
+        </p>
+        <a href="#recipes" class="btn btn-lg">استكشف الآن</a>
+      </div>
     </section>
-    
-    <section class="kitchen-food-section">
-        <div class="container">
-        <h2 class="section-title">كل شيء عن المطبخ والغذاء</h2>
-    
-        <div class="row">
-            <!-- أدوات المطبخ -->
-            <div class="col-md-4 px-3">
-            <div class="kitchen-item">
-                <img src="./assets/Hcee4b696ece0433bb5bca7dc3193235d9.jpg" alt="أداة مطبخ" class="img-fluid" />
+
+    <section class="kitchen-food-section py-5">
+      <div class="container">
+        <h2 class="section-title mb-5">كل شيء عن المطبخ والغذاء</h2>
+
+        <div class="row g-4">
+          <!-- أدوات المطبخ -->
+          <div class="col-md-4 px-3" data-aos="fade-up" data-aos-delay="100">
+            <div class="kitchen-item card h-100 hover-card">
+              <img
+                src="./assets/Hcee4b696ece0433bb5bca7dc3193235d9.jpg"
+                alt="أداة مطبخ"
+                class="card-img-top"
+              />
+              <div class="card-body d-flex flex-column">
                 <h3 class="item-title">أدوات مبتكرة للمطبخ</h3>
-                <p class="item-description">اكتشف أدوات تساعدك في تحضير الطعام بسهولة وفي وقت أقل.</p>
+                <p class="item-description">
+                  اكتشف أدوات تساعدك في تحضير الطعام بسهولة وفي وقت أقل.
+                </p>
+                <div class="mt-auto">
+                  <button class="btn btn-primary w-100">اكتشف المزيد</button>
+                </div>
+              </div>
             </div>
-            </div>
-    
-            <!-- نصائح غذائية -->
-            <div class="col-md-4 px-3">
-            <div class="kitchen-item">
-                <img src="./assets/1234.jpg" alt="أطعمة صحية" class="img-fluid" />
+          </div>
+
+          <!-- نصائح غذائية -->
+          <div class="col-md-4 px-3" data-aos="fade-up" data-aos-delay="200">
+            <div class="kitchen-item card h-100 hover-card">
+              <img
+                src="./assets/1234.jpg"
+                alt="أطعمة صحية"
+                class="card-img-top"
+              />
+              <div class="card-body d-flex flex-column">
                 <h3 class="item-title">توجهات غذائية صحية</h3>
-                <p class="item-description">تعرف على الأنماط الغذائية الصحية التي تعزز حياتك اليومية.</p>
+                <p class="item-description">
+                  تعرف على الأنماط الغذائية الصحية التي تعزز حياتك اليومية.
+                </p>
+                <div class="mt-auto">
+                  <button class="btn btn-primary w-100">اقرأ المزيد</button>
+                </div>
+              </div>
             </div>
-            </div>
-    
-            <!-- ديكورات المطبخ -->
-            <div class="col-md-4 px-3">
-            <div class="kitchen-item">
-                <img src="./assets/images (4).jpg" alt="ديكور المطبخ" class="img-fluid" />
+          </div>
+
+          <!-- ديكورات المطبخ -->
+          <div class="col-md-4 px-3" data-aos="fade-up" data-aos-delay="300">
+            <div class="kitchen-item card h-100 hover-card">
+              <img
+                src="./assets/images (4).jpg"
+                alt="ديكور المطبخ"
+                class="card-img-top"
+              />
+              <div class="card-body d-flex flex-column">
                 <h3 class="item-title">ديكورات المطبخ العصرية</h3>
-                <p class="item-description">استلهم من أفكار ديكور المطبخ لجعل مساحتك أكثر راحة وجمالاً.</p>
+                <p class="item-description">
+                  استلهم من أفكار ديكور المطبخ لجعل مساحتك أكثر راحة وجمالاً.
+                </p>
+                <div class="mt-auto">
+                  <button class="btn btn-primary w-100">استكشف الأفكار</button>
+                </div>
+              </div>
             </div>
-            </div>
+          </div>
         </div>
-    
-        <div class="row mt-4">
-            <!-- مكونات غذائية عالمية -->
-            <div class="col-md-4 px-3">
-            <div class="kitchen-item">
-                <img src="./assets/456789.jpg" alt="مكونات غذائية عالمية" class="img-fluid" />
+
+        <div class="row g-4 mt-4">
+          <!-- مكونات غذائية عالمية -->
+          <div class="col-md-4 px-3" data-aos="fade-up" data-aos-delay="400">
+            <div class="kitchen-item card h-100 hover-card">
+              <img
+                src="./assets/456789.jpg"
+                alt="مكونات غذائية عالمية"
+                class="card-img-top"
+              />
+              <div class="card-body d-flex flex-column">
                 <h3 class="item-title">مكونات غذائية من ثقافات مختلفة</h3>
-                <p class="item-description">اكتشف مكونات غذائية فريدة من ثقافات الطهي العالمية.</p>
+                <p class="item-description">
+                  اكتشف مكونات غذائية فريدة من ثقافات الطهي العالمية.
+                </p>
+                <div class="mt-auto">
+                  <button class="btn btn-primary w-100">
+                    تعرف على المكونات
+                  </button>
+                </div>
+              </div>
             </div>
-            </div>
-    
-            <!-- مراجعات المنتجات -->
-            <div class="col-md-4 px-3">
-            <div class="kitchen-item">
-                <img src="./assets/61Z-oVOwYuL._AC_SL1001_.jpg" alt="مراجعات منتجات" class="img-fluid" />
+          </div>
+
+          <!-- مراجعات المنتجات -->
+          <div class="col-md-4 px-3" data-aos="fade-up" data-aos-delay="500">
+            <div class="kitchen-item card h-100 hover-card">
+              <img
+                src="./assets/61Z-oVOwYuL._AC_SL1001_.jpg"
+                alt="مراجعات منتجات"
+                class="card-img-top"
+              />
+              <div class="card-body d-flex flex-column">
                 <h3 class="item-title">مراجعات الأدوات الغذائية</h3>
-                <p class="item-description">اطلع على مراجعات الأدوات المطبخية الحديثة لتسهيل عملك في المطبخ.</p>
+                <p class="item-description">
+                  اطلع على مراجعات الأدوات المطبخية الحديثة لتسهيل عملك في
+                  المطبخ.
+                </p>
+                <div class="mt-auto">
+                  <button class="btn btn-primary w-100">اقرأ المراجعات</button>
+                </div>
+              </div>
             </div>
-            </div>
+          </div>
 
-            <!-- حدائق المطبخ -->
-            <div class="col-md-4 px-3">
-            <div class="kitchen-item">
-                <img src="./assets/45678.jfif" alt="حديقة المطبخ" class="img-fluid" />
+          <!-- حدائق المطبخ -->
+          <div class="col-md-4 px-3" data-aos="fade-up" data-aos-delay="600">
+            <div class="kitchen-item card h-100 hover-card">
+              <img
+                src="./assets/45678.jfif"
+                alt="حديقة المطبخ"
+                class="card-img-top"
+              />
+              <div class="card-body d-flex flex-column">
                 <h3 class="item-title">حدائق المطبخ الصغيرة</h3>
-                <p class="item-description">كيف يمكنك زراعة الأعشاب الطازجة في مطبخك لإضافة نكهة طبيعية لأطباقك.</p>
+                <p class="item-description">
+                  كيف يمكنك زراعة الأعشاب الطازجة في مطبخك لإضافة نكهة طبيعية
+                  لأطباقك.
+                </p>
+                <div class="mt-auto">
+                  <button class="btn btn-primary w-100">ابدأ حديقتك</button>
+                </div>
+              </div>
             </div>
-            </div>
+          </div>
         </div>
-        </div>
+      </div>
     </section>
-    
+
     <!-- Recipes Section -->
-    <section id="recipes" class="py-5" data-aos="fade-up" data-aos-duration="1500">
-        <div class="container">
-            <h2 class="section-title">وصفات غذائية</h2>
-            <div class="row">
-                <!-- كارت 1 -->
-                <div class="col-md-4">
-                    <div class="card shadow-lg hover-card" data-aos="flip-left">
-                        <img src="./assets/banana.jpg" class="card-img-top" alt="وصفة 1">
-                        <div class="card-body">
-                            <h5 class="card-title">وصفة غذائية</h5>
-                            <p class="card-text">بان كيك موز وجوز</p>
-                            <p class="recipe-full-description" style="display:none;">نخلط البيض مع السكر والفانيلا ورشة الملح الهيل والقرفه بعد ذلك نضيف الحليب ونخلطهم جيداً ثم نضيف الطحين المخلوط بالكنج باودر بالتدريج ثم نتركهم ٥ دقائق
-                                نضع مقلاه على النار وننمسح بالزبده ونصب الخليط حتى يصبح فقاعات ويصبح لونها من الاسفل ذهبي
-                                ثم بعد الانتهاء من كل الكميه نحشوها بالموز والعسل والجوز</p>                    
-                            <a href="#" class="btn btn-primary">عرض الوصفة</a>
-                        </div>
-                    </div>
-                </div>
-    
-                <!-- كارت 2 -->
-                <div class="col-md-4">
-                    <div class="card shadow-lg hover-card" data-aos="flip-left">
-                        <img src="./assets/pasta.jpg" class="card-img-top" alt="وصفة 2">
-                        <div class="card-body">
-                            <h5 class="card-title">وصفة غذائية</h5>
-                            <p class="card-text">باستا دجاج وطماطم</p>
-                            <p class="recipe-full-description" style="display:none;">نذوب الزبده على النار ثم نضيف لها الدجاج ونحركه لين يقرب يستوي ثم نضيف الفلفل ّ الأخضر والزيتون والفطر ونحرك لين يذبل الفلفل
-                                نضيف والصويا والاريجانو ونحرك شوي ثم نضيف صلصة الطماطم مع الكريمة من بوك
-                                نضيف المكرونه وآخر شي نضيف جبن الموزاريلا ونحرك لين تذوب وتقدم</p>
-                            <a href="#" class="btn btn-primary">عرض الوصفة</a>
-                        </div>
-                    </div>
-                </div>
-    
-                <!-- كارت 3 -->
-                <div class="col-md-4">
-                    <div class="card shadow-lg hover-card" data-aos="flip-left">
-                        <img src="./assets/images (1).jpg" class="card-img-top" alt="وصفة 3">
-                        <div class="card-body">
-                            <h5 class="card-title">وصفة غذائية</h5>
-                            <p class="card-text">سلطة حمص وخضار</p>
-                            <p class="recipe-full-description" style="display:none;">نحضر طبق تقديم واسع ونخلط فيه الحمص، والطماطم، والخيار، والبصل، والجزر، والفلفل الأخضر.
-                                نقلب المكونات مع بعضهم البعض.
-                                نسكب عصير الليمون، والزيت على سطح الخليط السابق.
-                                نضيف الملح والكمون إلى سلطة الحمص.
-                                نقلب المزيج عدة مرات، كي تتداخل المكونات معًا، ونقدمها طازجة</p>
-                            <a href="#" class="btn btn-primary">عرض الوصفة</a>
-                        </div>
-                    </div>
-                </div>
-    
-                <!-- الكروت المخفية -->
-                <div class="col-md-4 extra-card d-none">
-                    <div class="card shadow-lg hover-card" data-aos="flip-left">
-                        <img src="./assets/images.jpg" class="card-img-top" alt="وصفة 4">
-                        <div class="card-body">
-                            <h5 class="card-title">وصفة غذائية</h5>
-                            <p class="card-text">متبل الفاصولياء البيضاء بالبنجر</p>
-                            <p class="recipe-full-description" style="display:none;">100 جرام فاصولياء بيضاء مسلوقة.
-                                2 حبة بنجر متوسطة الحجم مقشرة ومسلوقة.
-                                ملعقة طعام طحينة.
-                                2 ملعقة طعام زيت زيتون.
-                                عصير ½ ليمونة.
-                                ¼ ملعقة صغيرة كمون.
-                                10 جرامات حبة البركة.
-                                رشة ملح.
-                                رشة فلفل أسود.
-                                طريقة عمل متبل الفاصوليا البيضاء بالبنجر:
-                                - في الخلاط توضع جميع المكونات ما عدا حبة البركة ويتم الخلط إلى أن ينعم الخليط.
-                                تقدم الوصفة في طبق وتنثر حبة البركة وملعقة زيت الزيتون عليها، وتقدم مع ربع رغيف بلدي أو شريحتين توست بني.</p>
-                            <a href="#" class="btn btn-primary">عرض الوصفة</a>
-                        </div>
-                    </div>
-                </div>
-    
-                <div class="col-md-4 extra-card d-none">
-                    <div class="card shadow-lg hover-card" data-aos="flip-left">
-                        <img src="./assets/11.jpg" class="card-img-top" alt="وصفة 5">
-                        <div class="card-body">
-                            <h5 class="card-title">وصفة غذائية</h5>
-                            <p class="card-text">ميلك شيك تمر وموز</p>
-                            <p class="recipe-full-description" style="display:none;">ضعي الموز والزبادي والجوز وملعقة كبيرة من العسل في الخلاط.
-                                اخلط على سرعة منخفضة حتى تبدأ المكونات بالامتزاج. ثم ارفع السرعة إلى عالية واخلط حتى يصبح المزيج ناعمًا. للحصول على ميلك شيك أحلى، أضف ملعقة كبيرة أخرى من العسل. قدّمه فورًا.
-                                </p>
-                            <a href="#" class="btn btn-primary">عرض الوصفة</a>
-                        </div>
-                    </div>
-                </div>
-    
-                <div class="col-md-4 extra-card d-none">
-                    <div class="card shadow-lg hover-card" data-aos="flip-left">
-                        <img src="./assets/123.jpg" class="card-img-top" alt="وصفة 6">
-                        <div class="card-body">
-                            <h5 class="card-title">وصفة غذائية</h5>
-                            <p class="card-text">شرائح كعك زبدة فول سوداني وقطع الشيكولاته</p>
-                            <p class="recipe-full-description" style="display:none;">اكسروا البسكويت إلى قطع متوسطة الحجم.
-                                في وعاء، اخلطوا الحليب المكثف المحلى مع الزبدة والكاكاو حتى تحصلوا على مزيج متجانس.
-                                أضيفوا البسكويت وقلبوا المزيج حتى تتغمس قطع البسكويت بالكامل. زيدوا زبدة الفول السوداني وقلبوا مجدداً.                                
-                                رصوا المزيج في قالب رغيف مغطى بورق نايلون. غطوه ولفوه جيداً. أدخلوه إلى الفريزر لمدة 3-4 ساعات.                                
-                                أخرجوه من الفريزر وقطعوه إلى شرائح بنفس الحجم.</p>
-                            <a href="#" class="btn btn-primary">عرض الوصفة</a>
-                        </div>
-                    </div>
-                </div>
+    <section
+      id="recipes"
+      class="py-5"
+      data-aos="fade-up"
+      data-aos-duration="1500"
+    >
+      <div class="container">
+        <h2 class="section-title">وصفات غذائية</h2>
+        <div class="row">
+          <!-- كارت 1 -->
+          <div class="col-md-4">
+            <div class="card shadow-lg hover-card" data-aos="flip-left">
+              <img
+                src="./assets/banana.jpg"
+                class="card-img-top"
+                alt="وصفة 1"
+              />
+              <div class="card-body">
+                <h5 class="card-title">وصفة غذائية</h5>
+                <p class="card-text">بان كيك موز وجوز</p>
+                <p class="recipe-full-description" style="display: none">
+                  نخلط البيض مع السكر والفانيلا ورشة الملح الهيل والقرفه بعد ذلك
+                  نضيف الحليب ونخلطهم جيداً ثم نضيف الطحين المخلوط بالكنج باودر
+                  بالتدريج ثم نتركهم ٥ دقائق نضع مقلاه على النار وننمسح بالزبده
+                  ونصب الخليط حتى يصبح فقاعات ويصبح لونها من الاسفل ذهبي ثم بعد
+                  الانتهاء من كل الكميه نحشوها بالموز والعسل والجوز
+                </p>
+                <a href="#" class="btn btn-primary">عرض الوصفة</a>
+              </div>
             </div>
-    
-            <!-- زر إظهار المزيد -->
-            <div class="text-center mt-4">
-                <button id="showMoreBtn" class="btn btn-outline-primary">إظهار المزيد</button>
+          </div>
+
+          <!-- كارت 2 -->
+          <div class="col-md-4">
+            <div class="card shadow-lg hover-card" data-aos="flip-left">
+              <img src="./assets/pasta.jpg" class="card-img-top" alt="وصفة 2" />
+              <div class="card-body">
+                <h5 class="card-title">وصفة غذائية</h5>
+                <p class="card-text">باستا دجاج وطماطم</p>
+                <p class="recipe-full-description" style="display: none">
+                  نذوب الزبده على النار ثم نضيف لها الدجاج ونحركه لين يقرب يستوي
+                  ثم نضيف الفلفل ّ الأخضر والزيتون والفطر ونحرك لين يذبل الفلفل
+                  نضيف والصويا والاريجانو ونحرك شوي ثم نضيف صلصة الطماطم مع
+                  الكريمة من بوك نضيف المكرونه وآخر شي نضيف جبن الموزاريلا ونحرك
+                  لين تذوب وتقدم
+                </p>
+                <a href="#" class="btn btn-primary">عرض الوصفة</a>
+              </div>
             </div>
+          </div>
+
+          <!-- كارت 3 -->
+          <div class="col-md-4">
+            <div class="card shadow-lg hover-card" data-aos="flip-left">
+              <img
+                src="./assets/images (1).jpg"
+                class="card-img-top"
+                alt="وصفة 3"
+              />
+              <div class="card-body">
+                <h5 class="card-title">وصفة غذائية</h5>
+                <p class="card-text">سلطة حمص وخضار</p>
+                <p class="recipe-full-description" style="display: none">
+                  نحضر طبق تقديم واسع ونخلط فيه الحمص، والطماطم، والخيار،
+                  والبصل، والجزر، والفلفل الأخضر. نقلب المكونات مع بعضهم البعض.
+                  نسكب عصير الليمون، والزيت على سطح الخليط السابق. نضيف الملح
+                  والكمون إلى سلطة الحمص. نقلب المزيج عدة مرات، كي تتداخل
+                  المكونات معًا، ونقدمها طازجة
+                </p>
+                <a href="#" class="btn btn-primary">عرض الوصفة</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- الكروت المخفية -->
+          <div class="col-md-4 extra-card d-none">
+            <div class="card shadow-lg hover-card" data-aos="flip-left">
+              <img
+                src="./assets/images.jpg"
+                class="card-img-top"
+                alt="وصفة 4"
+              />
+              <div class="card-body">
+                <h5 class="card-title">وصفة غذائية</h5>
+                <p class="card-text">متبل الفاصولياء البيضاء بالبنجر</p>
+                <p class="recipe-full-description" style="display: none">
+                  100 جرام فاصولياء بيضاء مسلوقة. 2 حبة بنجر متوسطة الحجم مقشرة
+                  ومسلوقة. ملعقة طعام طحينة. 2 ملعقة طعام زيت زيتون. عصير ½
+                  ليمونة. ¼ ملعقة صغيرة كمون. 10 جرامات حبة البركة. رشة ملح. رشة
+                  فلفل أسود. طريقة عمل متبل الفاصوليا البيضاء بالبنجر: - في
+                  الخلاط توضع جميع المكونات ما عدا حبة البركة ويتم الخلط إلى أن
+                  ينعم الخليط. تقدم الوصفة في طبق وتنثر حبة البركة وملعقة زيت
+                  الزيتون عليها، وتقدم مع ربع رغيف بلدي أو شريحتين توست بني.
+                </p>
+                <a href="#" class="btn btn-primary">عرض الوصفة</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 extra-card d-none">
+            <div class="card shadow-lg hover-card" data-aos="flip-left">
+              <img src="./assets/11.jpg" class="card-img-top" alt="وصفة 5" />
+              <div class="card-body">
+                <h5 class="card-title">وصفة غذائية</h5>
+                <p class="card-text">ميلك شيك تمر وموز</p>
+                <p class="recipe-full-description" style="display: none">
+                  ضعي الموز والزبادي والجوز وملعقة كبيرة من العسل في الخلاط.
+                  اخلط على سرعة منخفضة حتى تبدأ المكونات بالامتزاج. ثم ارفع
+                  السرعة إلى عالية واخلط حتى يصبح المزيج ناعمًا. للحصول على ميلك
+                  شيك أحلى، أضف ملعقة كبيرة أخرى من العسل. قدّمه فورًا.
+                </p>
+                <a href="#" class="btn btn-primary">عرض الوصفة</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 extra-card d-none">
+            <div class="card shadow-lg hover-card" data-aos="flip-left">
+              <img src="./assets/123.jpg" class="card-img-top" alt="وصفة 6" />
+              <div class="card-body">
+                <h5 class="card-title">وصفة غذائية</h5>
+                <p class="card-text">
+                  شرائح كعك زبدة فول سوداني وقطع الشيكولاته
+                </p>
+                <p class="recipe-full-description" style="display: none">
+                  اكسروا البسكويت إلى قطع متوسطة الحجم. في وعاء، اخلطوا الحليب
+                  المكثف المحلى مع الزبدة والكاكاو حتى تحصلوا على مزيج متجانس.
+                  أضيفوا البسكويت وقلبوا المزيج حتى تتغمس قطع البسكويت بالكامل.
+                  زيدوا زبدة الفول السوداني وقلبوا مجدداً. رصوا المزيج في قالب
+                  رغيف مغطى بورق نايلون. غطوه ولفوه جيداً. أدخلوه إلى الفريزر
+                  لمدة 3-4 ساعات. أخرجوه من الفريزر وقطعوه إلى شرائح بنفس الحجم.
+                </p>
+                <a href="#" class="btn btn-primary">عرض الوصفة</a>
+              </div>
+            </div>
+          </div>
         </div>
-    
-        <!-- Modal -->
-        <div class="modal fade" id="recipeModal" tabindex="-1" aria-labelledby="recipeModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="recipeModalLabel">عنوان الوصفة</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="إغلاق"></button>
-                    </div>
-                    <div class="modal-body text-center">
-                        <img id="recipeImage" src="" class="img-fluid rounded mb-3" alt="وصفة">
-                        <p id="recipeDescription" class="fs-5"></p>
-                    </div>
-                </div>
-            </div>
+
+        <!-- زر إظهار المزيد -->
+        <div class="text-center mt-4">
+          <button id="showMoreBtn" class="btn btn-outline-primary">
+            إظهار المزيد
+          </button>
         </div>
+      </div>
+
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="recipeModal"
+        tabindex="-1"
+        aria-labelledby="recipeModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="recipeModalLabel">عنوان الوصفة</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="إغلاق"
+              ></button>
+            </div>
+            <div class="modal-body text-center">
+              <img
+                id="recipeImage"
+                src=""
+                class="img-fluid rounded mb-3"
+                alt="وصفة"
+              />
+              <p id="recipeDescription" class="fs-5"></p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-<!-- About Us Section -->
-<section id="about-us" class="bg-light py-5" data-aos="fade-right" data-aos-duration="1500">
-    <div class="container">
+    <!-- About Us Section -->
+    <section
+      id="about-us"
+      class="bg-light py-5"
+      data-aos="fade-right"
+      data-aos-duration="1500"
+    >
+      <div class="container">
         <div class="row align-items-center">
-            <!-- Text Column -->
-            <div class="col-lg-6 text-center text-lg-start">
-                <h2 class="mb-4">من نحن</h2>
-                <p class="fs-5">نحن فريق متخصص في تقديم أفضل الوصفات في مجالات الأدوية، الكيمياء، الغذاء، الزراعة وغيرها. هدفنا هو توفير المعرفة والمنتجات الأكثر فاعلية للمستخدمين.</p>
-            </div>
-            <!-- Image Column -->
-            <div class="col-lg-6 text-center">
-                <img src="./assets/What-Does-a-Pharmaceutical-Scientist-Do_.jpg" alt="About Us Image" class="img-fluid rounded-circle shadow-lg" style="object-fit: cover; width: 500px; height: 500px;">
-            </div>
+          <!-- Text Column -->
+          <div class="col-lg-6 text-center text-lg-start">
+            <h2 class="mb-4">من نحن</h2>
+            <p class="fs-5">
+              نحن فريق متخصص في تقديم أفضل الوصفات في مجالات الأدوية، الكيمياء،
+              الغذاء، الزراعة وغيرها. هدفنا هو توفير المعرفة والمنتجات الأكثر
+              فاعلية للمستخدمين.
+            </p>
+          </div>
+          <!-- Image Column -->
+          <div class="col-lg-6 text-center">
+            <img
+              src="./assets/What-Does-a-Pharmaceutical-Scientist-Do_.jpg"
+              alt="About Us Image"
+              class="img-fluid rounded-circle shadow-lg"
+              style="object-fit: cover; width: 500px; height: 500px"
+            />
+          </div>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-
-
-<!-- Footer -->
-      <footer class="py-5">
-        <div class="container py-4">
-            <div class="row">
-                <div class="col-lg-4 mb-4 mb-lg-0">
-                    <div class="logo-container mb-3">
-                        <div class="logo-text">
-                            <h1 class="logo-main text-white">العلماء المتشردون</h1>
-                            <p class="logo-subtitle mb-0" style="color: text-white; font-size: 1rem;">للتنمية العلمية</p>
-                        </div>
-                    </div>
-                    <p class="text-white-50">وصفات وتركيبات مميزة للتصنيع الزراعي، الصيدلاني، الكيميائي، والغذائي.</p>
-                </div>
-                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
-                    <h5 class="text-white mb-3">الفئات</h5>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">الصيدلانية</a></li>
-                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">الكيميائية</a></li>
-                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">الزراعية</a></li>
-                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">الغذائية</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
-                    <h5 class="text-white mb-3">الشركة</h5>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">عن الشركة</a></li>
-                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">فريق العمل</a></li>
-                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">الوظائف</a></li>
-                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">اتصل بنا</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-4 col-md-4">
-                    <h5 class="text-white mb-3">النشرة البريدية</h5>
-                    <p class="text-white-50 mb-3">اشترك للحصول على تحديثات حول الوصفات الجديدة والعروض الخاصة.</p>
-                    <form class="mb-3">
-                        <div class="input-group">
-                            <input type="email" class="form-control" placeholder="بريدك الإلكتروني">
-                            <button class="btn btn-accent" type="submit" style="background-color:var(--accent-light); color:var(--primary-dark);">اشتراك</button>
-                        </div>
-                    </form>
-                    <div class="d-flex gap-3">
-                        <a href="#" class="text-white"><svg width="24" height="24" fill="currentColor"
-                                viewBox="0 0 24 24">
-                                <path
-                                    d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z">
-                                </path>
-                            </svg></a>
-                        <a href="#" class="text-white"><svg width="24" height="24" fill="currentColor"
-                                viewBox="0 0 24 24">
-                                <path
-                                    d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84">
-                                </path>
-                            </svg></a>
-                        <a href="#" class="text-white"><svg width="24" height="24" fill="currentColor"
-                                viewBox="0 0 24 24">
-                                <path
-                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z">
-                                </path>
-                            </svg></a>
-                    </div>
-                </div>
+    <!-- Footer -->
+    <footer class="py-5">
+      <div class="container py-4">
+        <div class="row">
+          <div class="col-lg-4 mb-4 mb-lg-0">
+            <div class="logo-container mb-3">
+              <div class="logo-text">
+                <h1 class="logo-main text-white">العلماء المتشردون</h1>
+                <p
+                  class="logo-subtitle mb-0"
+                  style="color: text-white; font-size: 1rem"
+                >
+                  للتنمية العلمية
+                </p>
+              </div>
             </div>
-            <hr class="my-4 bg-white-50">
-            <div class="row">
-                <div class="col-md-6 text-center text-md-end">
-                    <p class="small text-white-50 mb-0">© 2023 Vagabondscientist. جميع الحقوق محفوظة.</p>
-                </div>
-                <div class="col-md-6 text-center text-md-start">
-                    <ul class="list-inline small mb-0">
-                        <li class="list-inline-item"><a href="#" class="text-white-50 text-decoration-none">سياسة
-                                الخصوصية</a></li>
-                        <li class="list-inline-item"><a href="#" class="text-white-50 text-decoration-none">شروط
-                                الخدمة</a></li>
-                        <li class="list-inline-item"><a href="#" class="text-white-50 text-decoration-none">اتصل بنا</a>
-                        </li>
-                    </ul>
-                </div>
+            <p class="text-white-50">
+              وصفات وتركيبات مميزة للتصنيع الزراعي، الصيدلاني، الكيميائي،
+              والغذائي.
+            </p>
+          </div>
+          <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+            <h5 class="text-white mb-3">الفئات</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a href="#" class="text-white-50 text-decoration-none"
+                  >الصيدلانية</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-white-50 text-decoration-none"
+                  >الكيميائية</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-white text-decoration-none">الزراعية</a>
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-white-50 text-decoration-none"
+                  >الغذائية</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+            <h5 class="text-white mb-3">الشركة</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a href="#" class="text-white-50 text-decoration-none"
+                  >عن الشركة</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-white-50 text-decoration-none"
+                  >فريق العمل</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-white-50 text-decoration-none"
+                  >الوظائف</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-white-50 text-decoration-none"
+                  >اتصل بنا</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-4 col-md-4">
+            <h5 class="text-white mb-3">النشرة البريدية</h5>
+            <p class="text-white-50 mb-3">
+              اشترك للحصول على تحديثات حول الوصفات الجديدة والعروض الخاصة.
+            </p>
+            <div class="d-flex gap-3">
+              <a href="#" class="text-white"
+                ><svg
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                  ></path></svg
+              ></a>
+              <a href="#" class="text-white"
+                ><svg
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"
+                  ></path></svg
+              ></a>
+              <a href="#" class="text-white"
+                ><svg
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"
+                  ></path></svg
+              ></a>
             </div>
+          </div>
         </div>
+        <hr class="my-4 bg-white-50" />
+        <div class="row">
+          <div class="col-md-6 text-center text-md-end">
+            <p class="small text-white-50 mb-0">
+              © 2023 Vagabondscientist. جميع الحقوق محفوظة.
+            </p>
+          </div>
+          <div class="col-md-6 text-center text-md-start">
+            <ul class="list-inline small mb-0">
+              <li class="list-inline-item">
+                <a href="#" class="text-white-50 text-decoration-none"
+                  >سياسة الخصوصية</a
+                >
+              </li>
+              <li class="list-inline-item">
+                <a href="#" class="text-white-50 text-decoration-none"
+                  >شروط الخدمة</a
+                >
+              </li>
+              <li class="list-inline-item">
+                <a href="#" class="text-white-50 text-decoration-none"
+                  >اتصل بنا</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script src="script.js"></script>
     <script>
-        AOS.init();
+      AOS.init();
     </script>
-</body>
+  </body>
 </html>
