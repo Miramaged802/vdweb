@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>اتصل بنا - العلماء المتشردون</title>
+    <!-- Bootstrap 5 RTL CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.rtl.min.css"
+    />
+    <!-- Google Fonts - Tajawal for Arabic -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <style>
+      :root {
+        --primary-dark: #034c53;
+        --primary: #007074;
+        --accent: #f38c79;
+        --accent-light: #ffc1b4;
+      }
+
+      body {
+        font-family: "Tajawal", sans-serif;
+        background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+      }
+
+      .navbar-brand {
+        font-weight: 700;
+        color: var(--primary-dark);
+      }
+
+      .logo-container {
+        display: flex;
+        align-items: center;
+      }
+
+      .logo-text {
+        margin-right: 10px;
+      }
+
+      .logo-main {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: var(--primary-dark);
+        margin-bottom: 0;
+      }
+
+      .contact-card {
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+
+      .contact-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .contact-icon {
+        width: 60px;
+        height: 60px;
+        background-color: var(--accent-light);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1rem;
+        color: var(--primary-dark);
+        transition: all 0.3s ease;
+      }
+
+      .contact-card:hover .contact-icon {
+        background-color: var(--primary-dark);
+        color: white;
+        transform: scale(1.1);
+      }
+
+      .payment-method {
+        background: white;
+        border-radius: 10px;
+        padding: 1.5rem;
+        margin-bottom: 1rem;
+        transition: all 0.3s ease;
+      }
+
+      .payment-method:hover {
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transform: translateY(-3px);
+      }
+
+      .btn-accent {
+        background-color: var(--accent);
+        color: white;
+        border: none;
+        transition: all 0.3s ease;
+      }
+
+      .btn-accent:hover {
+        background-color: var(--primary);
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        color: white !important;
+      }
+
+      .btn:hover {
+        color: white !important;
+      }
+
+      .btn-outline-light:hover {
+        color: var(--primary-dark) !important;
+      }
+
+      .btn-light:hover {
+        color: white !important;
+        background-color: var(--primary);
+        border-color: var(--primary);
+      }
+
+      footer {
+        background: linear-gradient(
+          135deg,
+          var(--primary-dark) 0%,
+          var(--primary) 100%
+        );
+        color: white;
+      }
+
+      .social-icon {
+        width: 40px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 5px;
+        transition: all 0.3s ease;
+      }
+
+      .social-icon:hover {
+        background: var(--accent);
+        transform: translateY(-3px);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+      <div class="container">
+        <div class="logo-container">
+          <img
+            src="assets/logo.jpg"
+            alt="Logo"
+            style="height: 60px; margin-left: 15px"
+          />
+          <div class="logo-text">
+            <h1 class="logo-main">العلماء المتشردون</h1>
+            <p
+              class="logo-subtitle mb-0"
+              style="color: var(--primary); font-size: 1rem"
+            >
+              للتنمية العلمية
+            </p>
+          </div>
+        </div>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="Home.html">الرئيسية</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Agriculture.html">الزراعية</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="chemical.html">الكيميائية</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active fw-bold" href="contact.html"
+                >اتصل بنا</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Contact Section -->
+    <section class="py-5">
+      <div class="container py-4">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <h1 class="display-4 fw-bold" style="color: var(--primary-dark)">
+            تواصل معنا
+          </h1>
+          <p class="lead text-muted">
+            نحن هنا لمساعدتك ونرحب بتواصلك معنا عبر أي من قنوات الاتصال التالية
+          </p>
+        </div>
+
+        <div class="row g-4 mb-5">
+          <!-- Email -->
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="contact-card p-4 text-center h-100">
+              <div class="contact-icon">
+                <i class="fas fa-envelope fa-xl"></i>
+              </div>
+              <h3 class="h5 mb-3">البريد الإلكتروني</h3>
+              <p class="mb-3">vagabond.scientist2025@gmail.com</p>
+              <a
+                href="mailto:vagabond.scientist2025@gmail.com"
+                class="btn btn-accent"
+                >إرسال بريد</a
+              >
+            </div>
+          </div>
+
+          <!-- Phone/WhatsApp -->
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="contact-card p-4 text-center h-100">
+              <div class="contact-icon">
+                <i class="fab fa-whatsapp fa-xl"></i>
+              </div>
+              <h3 class="h5 mb-3">الهاتف / واتساب</h3>
+              <p class="mb-3">01001088937</p>
+              <div class="d-flex justify-content-center gap-2">
+                <a href="tel:01001088937" class="btn btn-accent">اتصال</a>
+                <a href="https://wa.me/201001088937" class="btn btn-accent"
+                  >واتساب</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Vodafone Cash -->
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="contact-card p-4 text-center h-100">
+              <div class="contact-icon">
+                <i class="fas fa-mobile-alt fa-xl"></i>
+              </div>
+              <h3 class="h5 mb-3">فودافون كاش</h3>
+              <p class="mb-3">01001088937</p>
+              <button
+                class="btn btn-accent"
+                onclick="copyToClipboard('01001088937')"
+              >
+                نسخ الرقم
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form Section -->
+        <div class="row justify-content-center mb-5">
+          <div class="col-lg-8">
+            <div
+              class="contact-card p-4"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              <h2 class="text-center mb-4" style="color: var(--primary-dark)">
+                راسلنا مباشرة
+              </h2>
+              <form id="contactForm" class="needs-validation" novalidate>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <div class="form-floating mb-3">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="name"
+                        placeholder="الاسم"
+                        required
+                      />
+                      <label for="name">الاسم</label>
+                      <div class="invalid-feedback">يرجى إدخال الاسم</div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-floating mb-3">
+                      <input
+                        type="email"
+                        class="form-control"
+                        id="email"
+                        placeholder="البريد الإلكتروني"
+                        required
+                      />
+                      <label for="email">البريد الإلكتروني</label>
+                      <div class="invalid-feedback">
+                        يرجى إدخال بريد إلكتروني صحيح
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-floating mb-3">
+                      <input
+                        type="tel"
+                        class="form-control"
+                        id="phone"
+                        placeholder="رقم الهاتف"
+                      />
+                      <label for="phone">رقم الهاتف (اختياري)</label>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-floating mb-3">
+                      <select class="form-select" id="subject" required>
+                        <option value="" selected disabled>اختر الموضوع</option>
+                        <option value="استفسار">استفسار عام</option>
+                        <option value="دعم">الدعم الفني</option>
+                        <option value="اقتراح">اقتراح</option>
+                        <option value="شكوى">شكوى</option>
+                        <option value="آخر">آخر</option>
+                      </select>
+                      <label for="subject">الموضوع</label>
+                      <div class="invalid-feedback">يرجى اختيار الموضوع</div>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-floating mb-3">
+                      <textarea
+                        class="form-control"
+                        id="message"
+                        style="height: 150px"
+                        placeholder="رسالتك"
+                        required
+                      ></textarea>
+                      <label for="message">رسالتك</label>
+                      <div class="invalid-feedback">يرجى كتابة رسالتك</div>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-check mb-3">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="terms"
+                        required
+                      />
+                      <label class="form-check-label" for="terms">
+                        أوافق على سياسة الخصوصية وشروط الاستخدام
+                      </label>
+                      <div class="invalid-feedback">
+                        يجب الموافقة على الشروط للمتابعة
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 text-center">
+                    <button type="submit" class="btn btn-accent btn-lg px-5">
+                      إرسال الرسالة
+                      <i class="fas fa-paper-plane ms-2"></i>
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- Payment Methods -->
+        <div
+          class="row justify-content-center"
+          data-aos="fade-up"
+          data-aos-delay="400"
+        >
+          <div class="col-lg-8">
+            <h2 class="text-center mb-4" style="color: var(--primary-dark)">
+              طرق الدفع
+            </h2>
+
+            <!-- Bank Transfer -->
+            <div class="payment-method">
+              <h3 class="h5 mb-3">البنك الأهلي المصري</h3>
+              <p class="mb-2">
+                <strong>رقم الحساب:</strong> 6615001672010900018
+              </p>
+              <p class="mb-2">
+                <strong>IBAN:</strong> EG720003066150016720109000180
+              </p>
+              <button
+                class="btn btn-accent btn-sm"
+                onclick="copyToClipboard('6615001672010900018')"
+              >
+                نسخ رقم الحساب
+              </button>
+              <button
+                class="btn btn-accent btn-sm"
+                onclick="copyToClipboard('EG720003066150016720109000180')"
+              >
+                نسخ IBAN
+              </button>
+            </div>
+
+            <!-- InstaPay -->
+            <div class="payment-method">
+              <h3 class="h5 mb-3">InstaPay</h3>
+              <p class="mb-2">soha.abdelrahman85@instapay</p>
+              <div class="d-flex gap-2">
+                <button
+                  class="btn btn-accent btn-sm"
+                  onclick="copyToClipboard('soha.abdelrahman85@instapay')"
+                >
+                  نسخ العنوان
+                </button>
+                <a
+                  href="https://ipn.eg/S/soha.abdelrahman85/instapay/2hNZPf"
+                  class="btn btn-accent btn-sm"
+                  >الدفع عبر InstaPay</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+     <footer class="py-5">
+      <div class="container py-4">
+        <div class="row">
+          <div class="col-lg-4 mb-4 mb-lg-0">
+            <div class="logo-container mb-3">
+              <div class="logo-text">
+                <h1 class="logo-main text-white">العلماء المتشردون</h1>
+                <p
+                  class="logo-subtitle mb-0"
+                  style="color: text-white; font-size: 1rem"
+                >
+                  للتنمية العلمية
+                </p>
+              </div>
+            </div>
+            <p class="text-white-50">
+              وصفات وتركيبات مميزة للتصنيع الزراعي، الصيدلاني، الكيميائي،
+              والغذائي.
+            </p>
+          </div>
+          <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+            <h5 class="text-white mb-3">الفئات</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a href="#" class="text-white-50 text-decoration-none"
+                  >الصيدلانية</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-white text-decoration-none"
+                  >الكيميائية</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-white-50 text-decoration-none"
+                  >الزراعية</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-white-50 text-decoration-none"
+                  >الغذائية</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+            <h5 class="text-white mb-3">الشركة</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a href="#" class="text-white-50 text-decoration-none"
+                  >عن الشركة</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-white-50 text-decoration-none"
+                  >فريق العمل</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-white-50 text-decoration-none"
+                  >الوظائف</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-white-50 text-decoration-none"
+                  >اتصل بنا</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-4 col-md-4">
+            <h5 class="text-white mb-3">النشرة البريدية</h5>
+            <p class="text-white-50 mb-3">
+              اشترك للحصول على تحديثات حول الوصفات الجديدة والعروض الخاصة.
+            </p>
+            <form class="mb-3">
+              <div class="input-group">
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="بريدك الإلكتروني"
+                />
+                <button
+                  class="btn btn-accent"
+                  type="submit"
+                  style="
+                    background-color: var(--accent-light);
+                    color: var(--primary-dark);
+                  "
+                >
+                  اشتراك
+                </button>
+              </div>
+            </form>
+            <div class="d-flex gap-3">
+              <a href="#" class="text-white"
+                ><svg
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                  ></path></svg
+              ></a>
+              <a href="#" class="text-white"
+                ><svg
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"
+                  ></path></svg
+              ></a>
+              <a href="#" class="text-white"
+                ><svg
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"
+                  ></path></svg
+              ></a>
+              <a href="#" class="text-white"
+                ><svg
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"
+                  ></path></svg
+              ></a>
+            </div>
+          </div>
+        </div>
+        <hr class="my-4 bg-white-50" />
+        <div class="row">
+          <div class="col-md-6 text-center text-md-start">
+            <p class="small text-white-50 mb-0">
+              © 2023 Vagabondscientist. جميع الحقوق محفوظة.
+            </p>
+          </div>
+          <div class="col-md-6 text-center text-md-end">
+            <p class="small text-white-50 mb-0">
+              تم التصميم و برمجه من خلال GMTWeb
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 800,
+        easing: "ease-in-out",
+        once: true,
+        mirror: false,
+      });
+
+      function copyToClipboard(text) {
+        navigator.clipboard
+          .writeText(text)
+          .then(() => {
+            alert("تم النسخ بنجاح!");
+          })
+          .catch((err) => {
+            console.error("فشل النسخ:", err);
+          });
+      }
+
+      // Form validation
+      (function () {
+        "use strict";
+        var forms = document.querySelectorAll(".needs-validation");
+        Array.prototype.slice.call(forms).forEach(function (form) {
+          form.addEventListener(
+            "submit",
+            function (event) {
+              if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+              } else {
+                event.preventDefault();
+                // Here you can add your form submission logic
+                alert("تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.");
+                form.reset();
+              }
+              form.classList.add("was-validated");
+            },
+            false
+          );
+        });
+      })();
+    </script>
+  </body>
+</html>
