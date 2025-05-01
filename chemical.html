@@ -47,7 +47,9 @@
 
       .logo-text {
         display: flex;
-        align-items: center;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
         transition: all 0.3s ease;
       }
 
@@ -625,7 +627,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="py-5">
+    <section class="hero-section">
       <div class="container py-5">
         <div class="row align-items-center">
           <div
@@ -1281,15 +1283,11 @@
     </section>
 
     <!-- Footer -->
-    <footer class="py-5">
+       <footer class="py-5">
       <div class="container py-4">
         <div class="row">
-          <div
-            class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0 text-center text-md-right"
-          >
-            <div
-              class="logo-container mb-3 justify-content-center justify-content-md-end"
-            >
+          <div class="col-lg-4 mb-4 mb-lg-0">
+            <div class="logo-container mb-3">
               <div class="logo-text">
                 <h1 class="logo-main text-white">العلماء المتشردون</h1>
                 <p
@@ -1305,9 +1303,7 @@
               والغذائي.
             </p>
           </div>
-          <div
-            class="col-6 col-md-3 col-lg-2 mb-4 mb-md-0 text-center text-md-right"
-          >
+          <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
             <h5 class="text-white mb-3">الفئات</h5>
             <ul class="list-unstyled">
               <li class="mb-2">
@@ -1330,9 +1326,7 @@
               </li>
             </ul>
           </div>
-          <div
-            class="col-6 col-md-3 col-lg-2 mb-4 mb-md-0 text-center text-md-right"
-          >
+          <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
             <h5 class="text-white mb-3">الشركة</h5>
             <ul class="list-unstyled">
               <li class="mb-2">
@@ -1357,14 +1351,12 @@
               </li>
             </ul>
           </div>
-          <div class="col-12 col-md-6 col-lg-4 text-center text-md-right">
+          <div class="col-lg-4 col-md-4">
             <h5 class="text-white mb-3">النشرة البريدية</h5>
             <p class="text-white-50 mb-3">
               اشترك للحصول على تحديثات حول الوصفات الجديدة والعروض الخاصة.
             </p>
-            <div
-              class="d-flex gap-3 justify-content-center justify-content-md-end"
-            >
+            <div class="d-flex gap-3">
               <a href="#" class="text-white"
                 ><svg
                   width="24"
@@ -1403,29 +1395,15 @@
         </div>
         <hr class="my-4 bg-white-50" />
         <div class="row">
-          <div class="col-md-6 text-center text-md-end mb-3 mb-md-0">
+          <div class="col-md-6 text-left text-md-start">
+            <p class="small text-white-50 mb-0">
+              تم التصميم و برمجه من خلال شركه GWTWeb
+            </p>
+          </div>
+          <div class="col-md-6 text-right text-md-end">
             <p class="small text-white-50 mb-0">
               © 2023 Vagabondscientist. جميع الحقوق محفوظة.
             </p>
-          </div>
-          <div class="col-md-6 text-center text-md-start">
-            <ul class="list-inline small mb-0">
-              <li class="list-inline-item mb-2 mb-sm-0">
-                <a href="#" class="text-white-50 text-decoration-none"
-                  >سياسة الخصوصية</a
-                >
-              </li>
-              <li class="list-inline-item mb-2 mb-sm-0">
-                <a href="#" class="text-white-50 text-decoration-none"
-                  >شروط الخدمة</a
-                >
-              </li>
-              <li class="list-inline-item mb-2 mb-sm-0">
-                <a href="#" class="text-white-50 text-decoration-none"
-                  >اتصل بنا</a
-                >
-              </li>
-            </ul>
           </div>
         </div>
       </div>
