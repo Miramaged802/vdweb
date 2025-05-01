@@ -18,340 +18,43 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+    <link rel="stylesheet" href="css/Agriculture.css" />
     <!-- Add AOS CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-
-    <style>
-      :root {
-        --primary-dark: #034c53;
-        --primary: #007074;
-        --accent: #f38c79;
-        --accent-light: #ffc1b4;
-      }
-
-      body {
-        font-family: "Tajawal", sans-serif;
-        background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
-        min-height: 100vh;
-        text-align: right;
-      }
-
-      .navbar-brand {
-        font-weight: 700;
-        color: var(--primary-dark);
-      }
-
-      .logo-container {
-        display: flex;
-        align-items: center;
-      }
-
-      .logo-text {
-        margin-right: 10px;
-      }
-
-      .logo-main {
-        font-size: 1.8rem;
-        font-weight: 700;
-        color: var(--primary-dark);
-        margin-bottom: 0;
-        letter-spacing: -1px;
-      }
-
-      .bg-gradient-primary {
-        background: linear-gradient(
-          135deg,
-          var(--primary-dark) 0%,
-          var(--primary) 100%
-        ) !important;
-      }
-
-      .btn-accent {
-        background-color: var(--accent);
-        color: white;
-        border: none;
-      }
-
-      .btn-accent:hover {
-        background-color: var(--primary);
-        color: white;
-      }
-
-      .card {
-        border: none;
-        border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease;
-      }
-
-      .card:hover {
-        transform: translateY(-5px);
-      }
-
-      .card-header {
-        background: linear-gradient(
-          135deg,
-          var(--primary) 0%,
-          var(--primary-dark) 100%
-        );
-        color: white;
-        border-radius: 10px 10px 0 0 !important;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      .category-badge {
-        background-color: var(--accent-light);
-        color: var(--primary-dark);
-        font-weight: 600;
-      }
-
-      footer {
-        background: linear-gradient(
-          135deg,
-          var(--primary-dark) 0%,
-          var(--primary) 100%
-        );
-        color: white;
-      }
-
-      .input-group
-        > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(
-          .valid-feedback
-        ):not(.invalid-tooltip):not(.invalid-feedback) {
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
-        border-top-left-radius: 0.375rem;
-        border-bottom-left-radius: 0.375rem;
-      }
-
-      .input-group > .form-control:not(:first-child) {
-        border-top-left-radius: 0;
-        border-bottom-left-radius: 0;
-        border-top-right-radius: 0.375rem;
-        border-bottom-right-radius: 0.375rem;
-      }
-
-      .recipe-code {
-        background-color: rgba(255, 255, 255, 0.2);
-        padding: 3px 8px;
-        border-radius: 4px;
-        font-family: monospace;
-        font-size: 0.9rem;
-      }
-
-      .card-footer-buttons {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 10px;
-      }
-
-      .more-recipes {
-        display: none;
-      }
-
-      .hero-img {
-        width: 100%;
-        height: auto;
-        max-height: 400px;
-        object-fit: cover;
-         margin-top: 10px;
-        border-radius: 10px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        
-      }
-
-      .logo-subtitle {
-        font-weight: 500;
-        letter-spacing: -0.5px;
-        margin-top: -5px;
-      }
-      .category-icon {
-        width: 80px;
-        height: 80px;
-        background: rgba(255, 193, 180, 0.2);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto 15px;
-        color: var(--primary);
-        font-size: 1.5rem;
-        transition: all 0.3s ease;
-      }
-
-      /* Hero Section Styles */
-      .hero {
-        background: linear-gradient(
-            rgba(3, 76, 83, 0.8),
-            rgba(0, 112, 116, 0.9)
-          ),
-          url("assets/agriculture-hero.jpg");
-        background-size: cover;
-        background-position: center;
-        min-height: 60vh;
-        display: flex;
-        align-items: center;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .hero::before {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background: url("assets/pattern.svg");
-        opacity: 0.1;
-        animation: patternMove 20s linear infinite;
-      }
-
-      @keyframes patternMove {
-        0% {
-          background-position: 0 0;
-        }
-        100% {
-          background-position: 100% 100%;
-        }
-      }
-
-      /* Card Animations */
-      .card {
-        transition: all 0.3s ease-in-out;
-        overflow: hidden;
-      }
-
-      .card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-      }
-
-      .card img {
-        transition: transform 0.5s ease;
-      }
-
-      .card:hover img {
-        transform: scale(1.05);
-      }
-
-      /* Button Animations */
-      .btn {
-        transition: all 0.3s ease;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .btn:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      }
-
-      .btn::after {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: -100%;
-        background: linear-gradient(
-          90deg,
-          transparent,
-          rgba(255, 255, 255, 0.2),
-          transparent
-        );
-        transition: 0.5s;
-      }
-
-      .btn:hover::after {
-        left: 100%;
-      }
-
-      /* Category Badge Animation */
-      .category-badge {
-        animation: pulse 2s infinite;
-      }
-
-      @keyframes pulse {
-        0% {
-          transform: scale(1);
-        }
-        50% {
-          transform: scale(1.05);
-        }
-        100% {
-          transform: scale(1);
-        }
-      }
-
-      /* Loading Animation */
-      @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      .fade-in-up {
-        animation: fadeInUp 0.6s ease-out;
-      }
-
-      /* Image Hover Effect */
-      .hover-zoom {
-        transition: transform 0.3s ease;
-        cursor: pointer;
-      }
-
-      .hover-zoom:hover {
-        transform: scale(1.05);
-      }
-
-      /* Section Title Animation */
-      .section-title {
-        position: relative;
-        display: inline-block;
-      }
-
-      .section-title::after {
-        content: "";
-        position: absolute;
-        width: 0;
-        height: 2px;
-        bottom: -5px;
-        left: 0;
-        background-color: var(--accent);
-        transition: width 0.3s ease;
-      }
-
-      .section-title:hover::after {
-        width: 100%;
-      }
-    </style>
   </head>
 
   <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+    <nav
+      class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top"
+    >
       <div class="container">
         <div class="logo-container">
-          <img
-            src="assets/logo.jpg"
-            alt="Vagabond Scientists Logo"
-            style="height: 60px; margin-left: 15px"
-          />
-          <div class="logo-text">
-            <h1 class="logo-main">العلماء المتشردون</h1>
-            <p
-              class="logo-subtitle mb-0"
-              style="color: var(--primary); font-size: 1rem"
-            >
-              للتنمية العلمية
-            </p>
+          <div class="logo-text d-flex align-items-center" style="gap: 10px">
+            <img
+              src="assets/logo.jpg"
+              alt="Vagabond Scientists Logo"
+              class="logo-img ms-2 rounded-circle"
+              data-aos="fade-right"
+              data-aos-duration="800"
+            />
+            <div class="text-start" style="text-align: right">
+              <h1
+                class="logo-main m-0"
+                data-aos="fade-up"
+                data-aos-duration="1000"
+              >
+                العلماء المتشردون
+              </h1>
+              <p
+                class="logo-subtitle m-0"
+                style="color: var(--primary)"
+                data-aos="fade-up"
+                data-aos-duration="1200"
+              >
+                للتنمية العلمية
+              </p>
+            </div>
           </div>
         </div>
         <button
@@ -359,24 +62,57 @@
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
         >
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
+            <li
+              class="nav-item"
+              data-aos="fade-left"
+              data-aos-duration="800"
+              data-aos-delay="100"
+            >
               <a class="nav-link" href="index.html">الرئيسية</a>
             </li>
-            <li class="nav-item">
+            <li
+              class="nav-item"
+              data-aos="fade-left"
+              data-aos-duration="800"
+              data-aos-delay="200"
+            >
               <a class="nav-link active fw-bold" href="Agriculture.html"
                 >الزراعية</a
               >
             </li>
-            <li class="nav-item">
+            <li
+              class="nav-item"
+              data-aos="fade-left"
+              data-aos-duration="800"
+              data-aos-delay="300"
+            >
               <a class="nav-link" href="chemical.html">الكيميائية</a>
             </li>
-            <li class="nav-item">
+            <li
+              class="nav-item"
+              data-aos="fade-left"
+              data-aos-duration="800"
+              data-aos-delay="400"
+            >
               <a class="nav-link" href="contact.html">اتصل بنا</a>
+            </li>
+            <li
+              class="nav-item"
+              data-aos="fade-left"
+              data-aos-duration="800"
+              data-aos-delay="500"
+            >
+              <button id="langSwitch" class="btn btn-outline-primary ms-3">
+                EN
+              </button>
             </li>
           </ul>
         </div>
@@ -399,12 +135,14 @@
               الزراعية. مصممة علمياً لتحقيق أفضل النتائج.
             </p>
             <div class="d-flex gap-3">
-              <a href="#recipes" class="btn btn-accent btn-lg rounded-pill px-4"
+              <a
+                href="#recipes"
+                class="btn btn-accent btn-lg rounded-pill px-4 hero-btn1"
                 >تصفح الوصفات</a
               >
               <a
                 href="#"
-                class="btn btn-outline-secondary btn-lg rounded-pill px-4"
+                class="btn btn-outline-secondary btn-lg rounded-pill px-4 hero-btn2"
                 >المزيد من المعلومات</a
               >
             </div>
@@ -413,7 +151,7 @@
             <img
               src="https://img.freepik.com/free-photo/agricultural-field-ai-generated_268835-9203.jpg?t=st=1745973284~exp=1745976884~hmac=94bd1c00cc08587207724315cd57cea4fde529bd6309f9d2f1d31da349dca8b8&w=1800"
               alt="حقل زراعي"
-              class="img-fluid rounded-3 shadow  hero-img"
+              class="img-fluid rounded-3 shadow hero-img"
             />
           </div>
         </div>
@@ -512,13 +250,22 @@
                   </li>
                 </ul>
               </div>
-              <div class="card-footer bg-transparent border-0">
+              <div class="card-footer bg-transparent border-0 flex-column">
                 <div class="card-footer-buttons">
-                  <span class="fw-bold text-accent" style="color: var(--accent)"
-                    >49.99 $</span
+                  <div
+                    class="d-flex justify-content-between flex-row"
+                    style="width: 100%"
                   >
-                  <span class="recipe-code">AGR-001</span>
-                  <button class="btn btn-sm btn-accent">تحميل</button>
+                    <span
+                      class="fw-bold text-accent"
+                      style="color: var(--accent)"
+                      >49.99 $</span
+                    >
+                    <span class="recipe-code">AGR-001</span>
+                  </div>
+                  <button class="btn btn-sm btn-accent" style="width: 100%">
+                    تحميل
+                  </button>
                 </div>
               </div>
             </div>
@@ -557,11 +304,20 @@
               </div>
               <div class="card-footer bg-transparent border-0">
                 <div class="card-footer-buttons">
-                  <span class="fw-bold text-accent" style="color: var(--accent)"
-                    >79.99 $</span
+                  <div
+                    class="d-flex justify-content-between"
+                    style="width: 100%"
                   >
-                  <span class="recipe-code">AGR-002</span>
-                  <button class="btn btn-sm btn-accent">تحميل</button>
+                    <span
+                      class="fw-bold text-accent"
+                      style="color: var(--accent)"
+                      >79.99 $</span
+                    >
+                    <span class="recipe-code">AGR-002</span>
+                  </div>
+                  <button class="btn btn-sm btn-accent" style="width: 100%">
+                    تحميل
+                  </button>
                 </div>
               </div>
             </div>
@@ -600,11 +356,20 @@
               </div>
               <div class="card-footer bg-transparent border-0">
                 <div class="card-footer-buttons">
-                  <span class="fw-bold text-accent" style="color: var(--accent)"
-                    >50.45 $</span
+                  <div
+                    class="d-flex justify-content-between"
+                    style="width: 100%"
                   >
-                  <span class="recipe-code">AGR-003</span>
-                  <button class="btn btn-sm btn-accent">تحميل</button>
+                    <span
+                      class="fw-bold text-accent"
+                      style="color: var(--accent)"
+                      >50.45 $</span
+                    >
+                    <span class="recipe-code">AGR-003</span>
+                  </div>
+                  <button class="btn btn-sm btn-accent" style="width: 100%">
+                    تحميل
+                  </button>
                 </div>
               </div>
             </div>
@@ -645,13 +410,20 @@
                 </div>
                 <div class="card-footer bg-transparent border-0">
                   <div class="card-footer-buttons">
-                    <span
-                      class="fw-bold text-accent"
-                      style="color: var(--accent)"
-                      >99.00 $</span
+                    <div
+                      class="d-flex justify-content-between"
+                      style="width: 100%"
                     >
-                    <span class="recipe-code">AGR-004</span>
-                    <button class="btn btn-sm btn-accent">تحميل</button>
+                      <span
+                        class="fw-bold text-accent"
+                        style="color: var(--accent)"
+                        >99.00 $</span
+                      >
+                      <span class="recipe-code">AGR-004</span>
+                    </div>
+                    <button class="btn btn-sm btn-accent" style="width: 100%">
+                      تحميل
+                    </button>
                   </div>
                 </div>
               </div>
@@ -690,13 +462,20 @@
                 </div>
                 <div class="card-footer bg-transparent border-0">
                   <div class="card-footer-buttons">
-                    <span
-                      class="fw-bold text-accent"
-                      style="color: var(--accent)"
-                      >77.50 $</span
+                    <div
+                      class="d-flex justify-content-between"
+                      style="width: 100%"
                     >
-                    <span class="recipe-code">AGR-005</span>
-                    <button class="btn btn-sm btn-accent">تحميل</button>
+                      <span
+                        class="fw-bold text-accent"
+                        style="color: var(--accent)"
+                        >77.50 $</span
+                      >
+                      <span class="recipe-code">AGR-005</span>
+                    </div>
+                    <button class="btn btn-sm btn-accent" style="width: 100%">
+                      تحميل
+                    </button>
                   </div>
                 </div>
               </div>
@@ -734,13 +513,20 @@
                 </div>
                 <div class="card-footer bg-transparent border-0">
                   <div class="card-footer-buttons">
-                    <span
-                      class="fw-bold text-accent"
-                      style="color: var(--accent)"
-                      >100.99 $</span
+                    <div
+                      class="d-flex justify-content-between"
+                      style="width: 100%"
                     >
-                    <span class="recipe-code">AGR-006</span>
-                    <button class="btn btn-sm btn-accent">تحميل</button>
+                      <span
+                        class="fw-bold text-accent"
+                        style="color: var(--accent)"
+                        >100.99 $</span
+                      >
+                      <span class="recipe-code">AGR-006</span>
+                    </div>
+                    <button class="btn btn-sm btn-accent" style="width: 100%">
+                      تحميل
+                    </button>
                   </div>
                 </div>
               </div>
@@ -779,13 +565,20 @@
                 </div>
                 <div class="card-footer bg-transparent border-0">
                   <div class="card-footer-buttons">
-                    <span
-                      class="fw-bold text-accent"
-                      style="color: var(--accent)"
-                      >60.99 $</span
+                    <div
+                      class="d-flex justify-content-between"
+                      style="width: 100%"
                     >
-                    <span class="recipe-code">AGR-007</span>
-                    <button class="btn btn-sm btn-accent">تحميل</button>
+                      <span
+                        class="fw-bold text-accent"
+                        style="color: var(--accent)"
+                        >60.99 $</span
+                      >
+                      <span class="recipe-code">AGR-007</span>
+                    </div>
+                    <button class="btn btn-sm btn-accent" style="width: 100%">
+                      تحميل
+                    </button>
                   </div>
                 </div>
               </div>
@@ -824,13 +617,20 @@
                 </div>
                 <div class="card-footer bg-transparent border-0">
                   <div class="card-footer-buttons">
-                    <span
-                      class="fw-bold text-accent"
-                      style="color: var(--accent)"
-                      >87.45 $</span
+                    <div
+                      class="d-flex justify-content-between"
+                      style="width: 100%"
                     >
-                    <span class="recipe-code">AGR-008</span>
-                    <button class="btn btn-sm btn-accent">تحميل</button>
+                      <span
+                        class="fw-bold text-accent"
+                        style="color: var(--accent)"
+                        >87.45 $</span
+                      >
+                      <span class="recipe-code">AGR-008</span>
+                    </div>
+                    <button class="btn btn-sm btn-accent" style="width: 100%">
+                      تحميل
+                    </button>
                   </div>
                 </div>
               </div>
@@ -869,20 +669,63 @@
                 </div>
                 <div class="card-footer bg-transparent border-0">
                   <div class="card-footer-buttons">
-                    <span
-                      class="fw-bold text-accent"
-                      style="color: var(--accent)"
-                      >120.00 $</span
+                    <div
+                      class="d-flex justify-content-between"
+                      style="width: 100%"
                     >
-                    <span class="recipe-code">AGR-009</span>
-                    <button class="btn btn-sm btn-accent">تحميل</button>
+                      <span
+                        class="fw-bold text-accent"
+                        style="color: var(--accent)"
+                        >120.00 $</span
+                      >
+                      <span class="recipe-code">AGR-009</span>
+                    </div>
+                    <button class="btn btn-sm btn-accent" style="width: 100%">
+                      تحميل
+                    </button>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
+        <!-- Modal for Download -->
+        <div
+          class="modal fade"
+          id="downloadModal"
+          tabindex="-1"
+          aria-labelledby="downloadModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="downloadModalLabel">
+                  تحميل ملف الوصفة
+                </h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="إغلاق"
+                ></button>
+              </div>
+              <div class="modal-body text-center">
+                <p class="mb-4">
+                  اضغط على الزر بالأسفل لتحميل ملف الوصفة المضغوط.
+                </p>
+                <a
+                  id="downloadRecipeLink"
+                  href="#"
+                  class="btn btn-accent btn-lg rounded-pill px-4"
+                  download
+                  >تحميل الملف المضغوط</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End Modal -->
         <div class="text-center mt-5">
           <button
             id="showMoreBtn"
@@ -1071,60 +914,6 @@
 
     <!-- Add AOS JS and initialize -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-      AOS.init({
-        duration: 800,
-        easing: "ease-in-out",
-        once: true,
-        mirror: false,
-      });
-
-      // Add smooth scrolling
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
-          e.preventDefault();
-          document.querySelector(this.getAttribute("href")).scrollIntoView({
-            behavior: "smooth",
-          });
-        });
-      });
-
-      // Add intersection observer for fade-in effects
-      const observerOptions = {
-        root: null,
-        threshold: 0.1,
-      };
-
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("fade-in-up");
-            observer.unobserve(entry.target);
-          }
-        });
-      }, observerOptions);
-
-      document.querySelectorAll(".card").forEach((card) => {
-        observer.observe(card);
-      });
-
-      document
-        .getElementById("showMoreBtn")
-        .addEventListener("click", function () {
-          const moreRecipes = document.querySelector(".more-recipes");
-          const btn = this;
-
-          if (
-            moreRecipes.style.display === "none" ||
-            moreRecipes.style.display === ""
-          ) {
-            moreRecipes.style.display = "flex";
-            btn.textContent = "عرض وصفات أقل";
-          } else {
-            moreRecipes.style.display = "none";
-            btn.textContent = "عرض جميع الوصفات";
-          }
-        });
-    </script>
+    <script src="js/Agriculture.js"></script>
   </body>
 </html>

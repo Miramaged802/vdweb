@@ -2,7 +2,10 @@
 <html lang="ar" dir="rtl">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
     <title>وصفات التصنيع الزراعي</title>
     <!-- Bootstrap 5 RTL CSS -->
     <link
@@ -14,26 +17,47 @@
       href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <link rel="stylesheet" href="style.css" />
+    <style>
+
+    </style>
   </head>
 
   <body>
     <!-- Navigation for Home.html -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+    <nav
+      class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top"
+    >
       <div class="container">
         <div class="logo-container">
-          <div class="logo-text d-flex align-items-center" style="gap: 15px">
+          <div class="logo-text d-flex align-items-center" style="gap: 10px">
             <img
               src="assets/logo.jpg"
               alt="Logo"
-              style="width: 60px; height: 60px"
-              class="ms-2 rounded-circle"
+              class="logo-img ms-2 rounded-circle"
+              data-aos="fade-right"
+              data-aos-duration="800"
             />
-            <div class="text-end" style="text-align: right">
-              <h1 class="logo-main m-0" style="font-size: 1.25rem">
+            <div class="text-start" style="text-align: right">
+              <h1
+                class="logo-main m-0"
+                data-aos="fade-up"
+                data-aos-duration="1000"
+              >
                 العلماء المتشردون
               </h1>
-              <p class="logo-subtitle m-0" style="font-size: 0.9rem">
+              <p
+                class="logo-subtitle m-0"
+                data-aos="fade-up"
+                data-aos-duration="1200"
+              >
                 للتنمية العلمية
               </p>
             </div>
@@ -45,22 +69,69 @@
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
         >
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link active fw-bold" href="Home.html">الرئيسية</a>
+            <li
+              class="nav-item"
+              data-aos="fade-left"
+              data-aos-duration="800"
+              data-aos-delay="100"
+            >
+              <a
+                class="nav-link active fw-bold"
+                href="index.html"
+                data-i18n="nav-home"
+                >الرئيسية</a
+              >
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="Agriculture.html">الزراعية</a>
+            <li
+              class="nav-item"
+              data-aos="fade-left"
+              data-aos-duration="800"
+              data-aos-delay="200"
+            >
+              <a
+                class="nav-link"
+                href="Agriculture.html"
+                data-i18n="nav-agriculture"
+                >الزراعية</a
+              >
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="chemical.html">الكيميائية</a>
+            <li
+              class="nav-item"
+              data-aos="fade-left"
+              data-aos-duration="800"
+              data-aos-delay="300"
+            >
+              <a class="nav-link" href="chemical.html" data-i18n="nav-chemical"
+                >الكيميائية</a
+              >
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="Contact.html">اتصل بنا</a>
+            <li
+              class="nav-item"
+              data-aos="fade-left"
+              data-aos-duration="800"
+              data-aos-delay="400"
+            >
+              <a class="nav-link" href="Contact.html" data-i18n="nav-contact"
+                >اتصل بنا</a
+              >
+            </li>
+            <li
+              class="nav-item"
+              data-aos="fade-left"
+              data-aos-duration="800"
+              data-aos-delay="500"
+            >
+              <button id="langSwitch" class="btn btn-outline-primary ms-3">
+                EN
+              </button>
             </li>
           </ul>
         </div>
@@ -75,13 +146,17 @@
       data-aos-duration="1500"
     >
       <div class="container position-relative">
-        <h1 class="display-3 fw-bold animated-text">
-          اكتشف أفضل الوصفات بأحدث التقنيات
-        </h1>
-        <p class="lead fs-3 mb-4 animated-text">
-          نقدم لك كل ما تحتاجه من وصفات طبية، غذائية، وكيميائية.
-        </p>
-        <a href="#recipes" class="btn btn-lg">استكشف الآن</a>
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-10 col-lg-8">
+            <h1 class="display-3 fw-bold animated-text">
+              اكتشف أفضل الوصفات بأحدث التقنيات
+            </h1>
+            <p class="lead mb-4 animated-text">
+              نقدم لك كل ما تحتاجه من وصفات طبية، غذائية، وكيميائية.
+            </p>
+            <a href="#recipes" class="btn btn-lg">استكشف الآن</a>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -228,14 +303,15 @@
     >
       <div class="container">
         <h2 class="section-title">وصفات غذائية</h2>
-        <div class="row">
+        <div class="row g-4">
           <!-- كارت 1 -->
-          <div class="col-md-4">
-            <div class="card shadow-lg hover-card" data-aos="flip-left">
+          <div class="col-12 col-sm-6 col-lg-4 mb-4">
+            <div class="card shadow-lg hover-card h-100" data-aos="flip-left">
               <img
                 src="./assets/banana.jpg"
                 class="card-img-top"
                 alt="وصفة 1"
+                loading="lazy"
               />
               <div class="card-body">
                 <h5 class="card-title">وصفة غذائية</h5>
@@ -253,9 +329,14 @@
           </div>
 
           <!-- كارت 2 -->
-          <div class="col-md-4">
-            <div class="card shadow-lg hover-card" data-aos="flip-left">
-              <img src="./assets/pasta.jpg" class="card-img-top" alt="وصفة 2" />
+          <div class="col-12 col-sm-6 col-lg-4 mb-4">
+            <div class="card shadow-lg hover-card h-100" data-aos="flip-left">
+              <img
+                src="./assets/pasta.jpg"
+                class="card-img-top"
+                alt="وصفة 2"
+                loading="lazy"
+              />
               <div class="card-body">
                 <h5 class="card-title">وصفة غذائية</h5>
                 <p class="card-text">باستا دجاج وطماطم</p>
@@ -272,12 +353,13 @@
           </div>
 
           <!-- كارت 3 -->
-          <div class="col-md-4">
-            <div class="card shadow-lg hover-card" data-aos="flip-left">
+          <div class="col-12 col-sm-6 col-lg-4 mb-4">
+            <div class="card shadow-lg hover-card h-100" data-aos="flip-left">
               <img
                 src="./assets/images (1).jpg"
                 class="card-img-top"
                 alt="وصفة 3"
+                loading="lazy"
               />
               <div class="card-body">
                 <h5 class="card-title">وصفة غذائية</h5>
@@ -295,12 +377,13 @@
           </div>
 
           <!-- الكروت المخفية -->
-          <div class="col-md-4 extra-card d-none">
-            <div class="card shadow-lg hover-card" data-aos="flip-left">
+          <div class="col-12 col-sm-6 col-lg-4 mb-4 extra-card d-none">
+            <div class="card shadow-lg hover-card h-100" data-aos="flip-left">
               <img
                 src="./assets/images.jpg"
                 class="card-img-top"
                 alt="وصفة 4"
+                loading="lazy"
               />
               <div class="card-body">
                 <h5 class="card-title">وصفة غذائية</h5>
@@ -319,9 +402,14 @@
             </div>
           </div>
 
-          <div class="col-md-4 extra-card d-none">
-            <div class="card shadow-lg hover-card" data-aos="flip-left">
-              <img src="./assets/11.jpg" class="card-img-top" alt="وصفة 5" />
+          <div class="col-12 col-sm-6 col-lg-4 mb-4 extra-card d-none">
+            <div class="card shadow-lg hover-card h-100" data-aos="flip-left">
+              <img
+                src="./assets/11.jpg"
+                class="card-img-top"
+                alt="وصفة 5"
+                loading="lazy"
+              />
               <div class="card-body">
                 <h5 class="card-title">وصفة غذائية</h5>
                 <p class="card-text">ميلك شيك تمر وموز</p>
@@ -336,9 +424,14 @@
             </div>
           </div>
 
-          <div class="col-md-4 extra-card d-none">
-            <div class="card shadow-lg hover-card" data-aos="flip-left">
-              <img src="./assets/123.jpg" class="card-img-top" alt="وصفة 6" />
+          <div class="col-12 col-sm-6 col-lg-4 mb-4 extra-card d-none">
+            <div class="card shadow-lg hover-card h-100" data-aos="flip-left">
+              <img
+                src="./assets/123.jpg"
+                class="card-img-top"
+                alt="وصفة 6"
+                loading="lazy"
+              />
               <div class="card-body">
                 <h5 class="card-title">وصفة غذائية</h5>
                 <p class="card-text">
@@ -434,8 +527,12 @@
     <footer class="py-5">
       <div class="container py-4">
         <div class="row">
-          <div class="col-lg-4 mb-4 mb-lg-0">
-            <div class="logo-container mb-3">
+          <div
+            class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0 text-center text-md-right"
+          >
+            <div
+              class="logo-container mb-3 justify-content-center justify-content-md-end"
+            >
               <div class="logo-text">
                 <h1 class="logo-main text-white">العلماء المتشردون</h1>
                 <p
@@ -451,7 +548,9 @@
               والغذائي.
             </p>
           </div>
-          <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+          <div
+            class="col-6 col-md-3 col-lg-2 mb-4 mb-md-0 text-center text-md-right"
+          >
             <h5 class="text-white mb-3">الفئات</h5>
             <ul class="list-unstyled">
               <li class="mb-2">
@@ -474,7 +573,9 @@
               </li>
             </ul>
           </div>
-          <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+          <div
+            class="col-6 col-md-3 col-lg-2 mb-4 mb-md-0 text-center text-md-right"
+          >
             <h5 class="text-white mb-3">الشركة</h5>
             <ul class="list-unstyled">
               <li class="mb-2">
@@ -499,12 +600,14 @@
               </li>
             </ul>
           </div>
-          <div class="col-lg-4 col-md-4">
+          <div class="col-12 col-md-6 col-lg-4 text-center text-md-right">
             <h5 class="text-white mb-3">النشرة البريدية</h5>
             <p class="text-white-50 mb-3">
               اشترك للحصول على تحديثات حول الوصفات الجديدة والعروض الخاصة.
             </p>
-            <div class="d-flex gap-3">
+            <div
+              class="d-flex gap-3 justify-content-center justify-content-md-end"
+            >
               <a href="#" class="text-white"
                 ><svg
                   width="24"
@@ -543,24 +646,24 @@
         </div>
         <hr class="my-4 bg-white-50" />
         <div class="row">
-          <div class="col-md-6 text-center text-md-end">
+          <div class="col-md-6 text-center text-md-end mb-3 mb-md-0">
             <p class="small text-white-50 mb-0">
               © 2023 Vagabondscientist. جميع الحقوق محفوظة.
             </p>
           </div>
           <div class="col-md-6 text-center text-md-start">
             <ul class="list-inline small mb-0">
-              <li class="list-inline-item">
+              <li class="list-inline-item mb-2 mb-sm-0">
                 <a href="#" class="text-white-50 text-decoration-none"
                   >سياسة الخصوصية</a
                 >
               </li>
-              <li class="list-inline-item">
+              <li class="list-inline-item mb-2 mb-sm-0">
                 <a href="#" class="text-white-50 text-decoration-none"
                   >شروط الخدمة</a
                 >
               </li>
-              <li class="list-inline-item">
+              <li class="list-inline-item mb-2 mb-sm-0">
                 <a href="#" class="text-white-50 text-decoration-none"
                   >اتصل بنا</a
                 >
@@ -576,6 +679,189 @@
     <script src="script.js"></script>
     <script>
       AOS.init();
+
+      // Function to adjust navbar responsively
+      function adjustNavbar() {
+        const navbarCollapse = document.querySelector(".navbar-collapse");
+        const logoImg = document.querySelector(".logo-img");
+        const logoMain = document.querySelector(".logo-main");
+        const logoSubtitle = document.querySelector(".logo-subtitle");
+        const logoContainer = document.querySelector(".logo-container");
+        const logoText = document.querySelector(".logo-text");
+        const textEnd = document.querySelector(".text-end");
+
+        // Ensure logo container and text are always in a row
+        if (logoContainer) {
+          logoContainer.style.flexDirection = "row";
+          logoContainer.style.alignItems = "center";
+        }
+
+        if (logoText) {
+          logoText.style.flexDirection = "row";
+          logoText.style.alignItems = "center";
+        }
+
+        if (textEnd) {
+          textEnd.style.textAlign = "right";
+        }
+
+        if (window.innerWidth < 576) {
+          // Mobile view
+          logoImg.style.width = "40px";
+          logoImg.style.height = "40px";
+          logoMain.style.fontSize = "1.1rem";
+          logoMain.style.whiteSpace = "nowrap";
+          logoSubtitle.style.fontSize = "0.7rem";
+          logoSubtitle.style.whiteSpace = "nowrap";
+
+          if (navbarCollapse) {
+            navbarCollapse.classList.add("navbar-mobile");
+          }
+
+          // Add animation to logo
+          logoImg.style.animation = "pulse 2s infinite";
+        } else if (window.innerWidth < 768) {
+          // Tablet view
+          logoImg.style.width = "45px";
+          logoImg.style.height = "45px";
+          logoMain.style.fontSize = "1.2rem";
+          logoMain.style.whiteSpace = "nowrap";
+          logoSubtitle.style.fontSize = "0.75rem";
+          logoSubtitle.style.whiteSpace = "nowrap";
+
+          if (navbarCollapse) {
+            navbarCollapse.classList.remove("navbar-mobile");
+          }
+
+          // Add animation to logo
+          logoImg.style.animation = "pulse 2s infinite";
+        } else if (window.innerWidth < 992) {
+          // Small desktop view
+          logoImg.style.width = "50px";
+          logoImg.style.height = "50px";
+          logoMain.style.fontSize = "1.3rem";
+          logoMain.style.whiteSpace = "nowrap";
+          logoSubtitle.style.fontSize = "0.8rem";
+          logoSubtitle.style.whiteSpace = "nowrap";
+
+          if (navbarCollapse) {
+            navbarCollapse.classList.remove("navbar-mobile");
+          }
+
+          // Add animation to logo
+          logoImg.style.animation = "pulse 2s infinite";
+        } else {
+          // Desktop view
+          logoImg.style.width = "60px";
+          logoImg.style.height = "60px";
+          logoMain.style.fontSize = "1.5rem";
+          logoMain.style.whiteSpace = "nowrap";
+          logoSubtitle.style.fontSize = "1rem";
+          logoSubtitle.style.whiteSpace = "nowrap";
+
+          if (navbarCollapse) {
+            navbarCollapse.classList.remove("navbar-mobile");
+          }
+
+          // Add animation to logo
+          logoImg.style.animation = "pulse 2s infinite";
+        }
+      }
+
+      // Language switch functionality
+      const translations = {
+        ar: {
+          "nav-home": "الرئيسية",
+          "nav-agriculture": "الزراعية",
+          "nav-chemical": "الكيميائية",
+          "nav-contact": "اتصل بنا",
+          // Add more translations as needed
+        },
+        en: {
+          "nav-home": "Home",
+          "nav-agriculture": "Agriculture",
+          "nav-chemical": "Chemical",
+          "nav-contact": "Contact",
+          // Add more translations as needed
+        },
+      };
+
+      function setLang(lang) {
+        document.documentElement.lang = lang === "ar" ? "ar" : "en";
+        document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+        for (const key in translations[lang]) {
+          const el = document.querySelector(`[data-i18n="${key}"]`);
+          if (el) el.textContent = translations[lang][key];
+        }
+        document.getElementById("langSwitch").textContent =
+          lang === "ar" ? "EN" : "AR";
+        localStorage.setItem("lang", lang);
+      }
+
+      // Add event listener to language switch button
+      if (document.getElementById("langSwitch")) {
+        document
+          .getElementById("langSwitch")
+          .addEventListener("click", function () {
+            const current = localStorage.getItem("lang") || "ar";
+            setLang(current === "ar" ? "en" : "ar");
+          });
+      }
+
+      // Set language on page load
+      window.addEventListener("DOMContentLoaded", function () {
+        setLang(localStorage.getItem("lang") || "ar");
+      });
+
+      // Call adjustNavbar on page load and window resize
+      window.addEventListener("load", adjustNavbar);
+      window.addEventListener("resize", adjustNavbar);
+
+      // Show more recipes functionality
+      document.addEventListener("DOMContentLoaded", function () {
+        const showMoreBtn = document.getElementById("showMoreBtn");
+        if (showMoreBtn) {
+          showMoreBtn.addEventListener("click", function () {
+            const extraCards = document.querySelectorAll(".extra-card");
+            extraCards.forEach((card) => {
+              card.classList.toggle("d-none");
+            });
+            showMoreBtn.textContent = showMoreBtn.textContent.includes("إظهار")
+              ? "عرض أقل"
+              : "إظهار المزيد";
+          });
+        }
+
+        // Recipe modal functionality
+        const recipeLinks = document.querySelectorAll(".btn-primary");
+        recipeLinks.forEach((link) => {
+          link.addEventListener("click", function (e) {
+            if (this.closest(".card")) {
+              e.preventDefault();
+              const card = this.closest(".card");
+              const title = card.querySelector(".card-text")
+                ? card.querySelector(".card-text").textContent
+                : "";
+              const image = card.querySelector(".card-img-top")
+                ? card.querySelector(".card-img-top").src
+                : "";
+              const description = card.querySelector(".recipe-full-description")
+                ? card.querySelector(".recipe-full-description").textContent
+                : "";
+
+              const recipeModal = document.getElementById("recipeModal");
+              if (recipeModal) {
+                const modal = new bootstrap.Modal(recipeModal);
+                document.getElementById("recipeModalLabel").textContent = title;
+                document.getElementById("recipeImage").src = image;
+                document.getElementById("recipeDescription").textContent =
+                  description;
+                modal.show();
+              }
+            }
+          });
+        });
+      });
     </script>
   </body>
 </html>

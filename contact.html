@@ -151,26 +151,134 @@
         background: var(--accent);
         transform: translateY(-3px);
       }
+
+      /* Logo animations and responsive styles */
+      .logo-img {
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        border-radius: 50%;
+        transition: all 0.3s ease;
+        animation: pulse 2s infinite;
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      .logo-main {
+        transition: all 0.3s ease;
+        white-space: nowrap;
+      }
+
+      .logo-subtitle {
+        transition: all 0.3s ease;
+        white-space: nowrap;
+      }
+
+      /* Responsive styles for navbar */
+      @media (max-width: 992px) {
+        .logo-container {
+          flex-direction: row !important;
+          align-items: center !important;
+        }
+
+        .logo-text {
+          flex-direction: row !important;
+          align-items: center !important;
+        }
+
+        .text-end {
+          text-align: right !important;
+        }
+
+        .logo-img {
+          width: 50px !important;
+          height: 50px !important;
+        }
+
+        .logo-main {
+          font-size: 1.3rem !important;
+          white-space: nowrap !important;
+        }
+
+        .logo-subtitle {
+          font-size: 0.8rem !important;
+          white-space: nowrap !important;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .logo-img {
+          width: 45px !important;
+          height: 45px !important;
+        }
+
+        .logo-main {
+          font-size: 1.2rem !important;
+        }
+
+        .logo-subtitle {
+          font-size: 0.75rem !important;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .logo-img {
+          width: 40px !important;
+          height: 40px !important;
+        }
+
+        .logo-main {
+          font-size: 1.1rem !important;
+        }
+
+        .logo-subtitle {
+          font-size: 0.7rem !important;
+        }
+      }
     </style>
   </head>
   <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+    <nav
+      class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top"
+    >
       <div class="container">
         <div class="logo-container">
-          <img
-            src="assets/logo.jpg"
-            alt="Logo"
-            style="height: 60px; margin-left: 15px"
-          />
-          <div class="logo-text">
-            <h1 class="logo-main">العلماء المتشردون</h1>
-            <p
-              class="logo-subtitle mb-0"
-              style="color: var(--primary); font-size: 1rem"
-            >
-              للتنمية العلمية
-            </p>
+          <div class="logo-text d-flex align-items-center" style="gap: 10px">
+            <img
+              src="assets/logo.jpg"
+              alt="Logo"
+              class="logo-img ms-2 rounded-circle"
+              data-aos="fade-right"
+              data-aos-duration="800"
+            />
+            <div class="text-start" style="text-align: right">
+              <h1
+                class="logo-main m-0"
+                data-aos="fade-up"
+                data-aos-duration="1000"
+              >
+                العلماء المتشردون
+              </h1>
+              <p
+                class="logo-subtitle mb-0"
+                style="color: var(--primary); font-size: 1rem"
+                data-aos="fade-up"
+                data-aos-duration="1200"
+              >
+                للتنمية العلمية
+              </p>
+            </div>
           </div>
         </div>
         <button
@@ -178,24 +286,57 @@
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
         >
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
+            <li
+              class="nav-item"
+              data-aos="fade-left"
+              data-aos-duration="800"
+              data-aos-delay="100"
+            >
               <a class="nav-link" href="index.html">الرئيسية</a>
             </li>
-            <li class="nav-item">
+            <li
+              class="nav-item"
+              data-aos="fade-left"
+              data-aos-duration="800"
+              data-aos-delay="200"
+            >
               <a class="nav-link" href="Agriculture.html">الزراعية</a>
             </li>
-            <li class="nav-item">
+            <li
+              class="nav-item"
+              data-aos="fade-left"
+              data-aos-duration="800"
+              data-aos-delay="300"
+            >
               <a class="nav-link" href="chemical.html">الكيميائية</a>
             </li>
-            <li class="nav-item">
+            <li
+              class="nav-item"
+              data-aos="fade-left"
+              data-aos-duration="800"
+              data-aos-delay="400"
+            >
               <a class="nav-link active fw-bold" href="contact.html"
                 >اتصل بنا</a
               >
+            </li>
+            <li
+              class="nav-item"
+              data-aos="fade-left"
+              data-aos-duration="800"
+              data-aos-delay="500"
+            >
+              <button id="langSwitch" class="btn btn-outline-primary ms-3">
+                EN
+              </button>
             </li>
           </ul>
         </div>
@@ -431,7 +572,7 @@
     </section>
 
     <!-- Footer -->
-       <footer class="py-5">
+    <footer class="py-5">
       <div class="container py-4">
         <div class="row">
           <div class="col-lg-4 mb-4 mb-lg-0">
@@ -569,6 +710,98 @@
         mirror: false,
       });
 
+      // Function to adjust navbar responsively
+      function adjustNavbar() {
+        const navbarCollapse = document.querySelector(".navbar-collapse");
+        const logoImg = document.querySelector(".logo-img");
+        const logoMain = document.querySelector(".logo-main");
+        const logoSubtitle = document.querySelector(".logo-subtitle");
+        const logoContainer = document.querySelector(".logo-container");
+        const logoText = document.querySelector(".logo-text");
+        const textEnd = document.querySelector(".text-end");
+
+        // Ensure logo container and text are always in a row
+        if (logoContainer) {
+          logoContainer.style.flexDirection = "row";
+          logoContainer.style.alignItems = "center";
+        }
+
+        if (logoText) {
+          logoText.style.flexDirection = "row";
+          logoText.style.alignItems = "center";
+        }
+
+        if (textEnd) {
+          textEnd.style.textAlign = "right";
+        }
+
+        if (window.innerWidth < 576) {
+          // Mobile view
+          logoImg.style.width = "40px";
+          logoImg.style.height = "40px";
+          logoMain.style.fontSize = "1.1rem";
+          logoMain.style.whiteSpace = "nowrap";
+          logoSubtitle.style.fontSize = "0.7rem";
+          logoSubtitle.style.whiteSpace = "nowrap";
+
+          if (navbarCollapse) {
+            navbarCollapse.classList.add("navbar-mobile");
+          }
+
+          // Add animation to logo
+          logoImg.style.animation = "pulse 2s infinite";
+        } else if (window.innerWidth < 768) {
+          // Tablet view
+          logoImg.style.width = "45px";
+          logoImg.style.height = "45px";
+          logoMain.style.fontSize = "1.2rem";
+          logoMain.style.whiteSpace = "nowrap";
+          logoSubtitle.style.fontSize = "0.75rem";
+          logoSubtitle.style.whiteSpace = "nowrap";
+
+          if (navbarCollapse) {
+            navbarCollapse.classList.remove("navbar-mobile");
+          }
+
+          // Add animation to logo
+          logoImg.style.animation = "pulse 2s infinite";
+        } else if (window.innerWidth < 992) {
+          // Small desktop view
+          logoImg.style.width = "50px";
+          logoImg.style.height = "50px";
+          logoMain.style.fontSize = "1.3rem";
+          logoMain.style.whiteSpace = "nowrap";
+          logoSubtitle.style.fontSize = "0.8rem";
+          logoSubtitle.style.whiteSpace = "nowrap";
+
+          if (navbarCollapse) {
+            navbarCollapse.classList.remove("navbar-mobile");
+          }
+
+          // Add animation to logo
+          logoImg.style.animation = "pulse 2s infinite";
+        } else {
+          // Desktop view
+          logoImg.style.width = "60px";
+          logoImg.style.height = "60px";
+          logoMain.style.fontSize = "1.5rem";
+          logoMain.style.whiteSpace = "nowrap";
+          logoSubtitle.style.fontSize = "1rem";
+          logoSubtitle.style.whiteSpace = "nowrap";
+
+          if (navbarCollapse) {
+            navbarCollapse.classList.remove("navbar-mobile");
+          }
+
+          // Add animation to logo
+          logoImg.style.animation = "pulse 2s infinite";
+        }
+      }
+
+      // Call adjustNavbar on page load and window resize
+      window.addEventListener("load", adjustNavbar);
+      window.addEventListener("resize", adjustNavbar);
+
       function copyToClipboard(text) {
         navigator.clipboard
           .writeText(text)
@@ -603,6 +836,67 @@
           );
         });
       })();
+
+      // Language switch logic
+      const translations = {
+        ar: {
+          "nav-home": "الرئيسية",
+          "nav-agriculture": "الزراعية",
+          "nav-chemical": "الكيميائية",
+          "nav-contact": "اتصل بنا",
+          "contact-title": "تواصل معنا",
+          "contact-desc":
+            "نحن هنا لمساعدتك ونرحب بتواصلك معنا عبر أي من قنوات الاتصال التالية",
+          "contact-email": "البريد الإلكتروني",
+          "contact-send": "إرسال بريد",
+          "contact-phone": "الهاتف / واتساب",
+          "contact-call": "اتصال",
+          "contact-whatsapp": "واتساب",
+          "contact-vodafone": "فودافون كاش",
+          "contact-copy": "نسخ الرقم",
+          // ... add more keys as needed
+        },
+        en: {
+          "nav-home": "Home",
+          "nav-agriculture": "Agriculture",
+          "nav-chemical": "Chemical",
+          "nav-contact": "Contact",
+          "contact-title": "Contact Us",
+          "contact-desc":
+            "We are here to help you and welcome your contact through any of the following channels.",
+          "contact-email": "Email",
+          "contact-send": "Send Email",
+          "contact-phone": "Phone / WhatsApp",
+          "contact-call": "Call",
+          "contact-whatsapp": "WhatsApp",
+          "contact-vodafone": "Vodafone Cash",
+          "contact-copy": "Copy Number",
+          // ... add more keys as needed
+        },
+      };
+
+      function setLang(lang) {
+        document.documentElement.lang = lang === "ar" ? "ar" : "en";
+        document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+        for (const key in translations[lang]) {
+          const el = document.querySelector(`[data-i18n="${key}"]`);
+          if (el) el.textContent = translations[lang][key];
+        }
+        document.getElementById("langSwitch").textContent =
+          lang === "ar" ? "EN" : "AR";
+        localStorage.setItem("lang", lang);
+      }
+
+      document
+        .getElementById("langSwitch")
+        .addEventListener("click", function () {
+          const current = localStorage.getItem("lang") || "ar";
+          setLang(current === "ar" ? "en" : "ar");
+        });
+
+      window.addEventListener("DOMContentLoaded", function () {
+        setLang(localStorage.getItem("lang") || "ar");
+      });
     </script>
   </body>
 </html>
