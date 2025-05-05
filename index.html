@@ -24,9 +24,27 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <style>
-
+      /* Fix for modal overlay issues */
+      .modal-backdrop {
+        z-index: 1500 !important;
+      }
+      
+      .modal {
+        z-index: 1600 !important;
+      }
+      
+      .modal-open {
+        overflow: hidden;
+        padding-right: 0 !important;
+      }
+      
+      /* Ensure modal content is visible */
+      .modal-content {
+        position: relative;
+        z-index: 1700;
+      }
     </style>
   </head>
 
@@ -39,7 +57,7 @@
         <div class="logo-container">
           <div class="logo-text d-flex align-items-center" style="gap: 10px">
             <img
-              src="assets/logo.jpg"
+              src="img/logo.jpg"
               alt="Logo"
               class="logo-img ms-2 rounded-circle"
               data-aos="fade-right"
@@ -169,7 +187,7 @@
           <div class="col-md-4 px-3" data-aos="fade-up" data-aos-delay="100">
             <div class="kitchen-item card h-100 hover-card">
               <img
-                src="./assets/Hcee4b696ece0433bb5bca7dc3193235d9.jpg"
+                src="img/Hcee4b696ece0433bb5bca7dc3193235d9.jpg"
                 alt="أداة مطبخ"
                 class="card-img-top"
               />
@@ -189,7 +207,7 @@
           <div class="col-md-4 px-3" data-aos="fade-up" data-aos-delay="200">
             <div class="kitchen-item card h-100 hover-card">
               <img
-                src="./assets/1234.jpg"
+                src="img/1234.jpg"
                 alt="أطعمة صحية"
                 class="card-img-top"
               />
@@ -209,7 +227,7 @@
           <div class="col-md-4 px-3" data-aos="fade-up" data-aos-delay="300">
             <div class="kitchen-item card h-100 hover-card">
               <img
-                src="./assets/images (4).jpg"
+                src="img/images (4).jpg"
                 alt="ديكور المطبخ"
                 class="card-img-top"
               />
@@ -231,7 +249,7 @@
           <div class="col-md-4 px-3" data-aos="fade-up" data-aos-delay="400">
             <div class="kitchen-item card h-100 hover-card">
               <img
-                src="./assets/456789.jpg"
+                src="img/456789.jpg"
                 alt="مكونات غذائية عالمية"
                 class="card-img-top"
               />
@@ -253,7 +271,7 @@
           <div class="col-md-4 px-3" data-aos="fade-up" data-aos-delay="500">
             <div class="kitchen-item card h-100 hover-card">
               <img
-                src="./assets/61Z-oVOwYuL._AC_SL1001_.jpg"
+                src="img/61Z-oVOwYuL._AC_SL1001_.jpg"
                 alt="مراجعات منتجات"
                 class="card-img-top"
               />
@@ -274,7 +292,7 @@
           <div class="col-md-4 px-3" data-aos="fade-up" data-aos-delay="600">
             <div class="kitchen-item card h-100 hover-card">
               <img
-                src="./assets/45678.jfif"
+                src="img/45678.jfif"
                 alt="حديقة المطبخ"
                 class="card-img-top"
               />
@@ -308,7 +326,7 @@
           <div class="col-12 col-sm-6 col-lg-4 mb-4">
             <div class="card shadow-lg hover-card h-100" data-aos="flip-left">
               <img
-                src="./assets/banana.jpg"
+                src="img/banana.jpg"
                 class="card-img-top"
                 alt="وصفة 1"
                 loading="lazy"
@@ -332,7 +350,7 @@
           <div class="col-12 col-sm-6 col-lg-4 mb-4">
             <div class="card shadow-lg hover-card h-100" data-aos="flip-left">
               <img
-                src="./assets/pasta.jpg"
+                src="img/pasta.jpg"
                 class="card-img-top"
                 alt="وصفة 2"
                 loading="lazy"
@@ -356,7 +374,7 @@
           <div class="col-12 col-sm-6 col-lg-4 mb-4">
             <div class="card shadow-lg hover-card h-100" data-aos="flip-left">
               <img
-                src="./assets/images (1).jpg"
+                src="img/images (1).jpg"
                 class="card-img-top"
                 alt="وصفة 3"
                 loading="lazy"
@@ -380,7 +398,7 @@
           <div class="col-12 col-sm-6 col-lg-4 mb-4 extra-card d-none">
             <div class="card shadow-lg hover-card h-100" data-aos="flip-left">
               <img
-                src="./assets/images.jpg"
+                src="img/images.jpg"
                 class="card-img-top"
                 alt="وصفة 4"
                 loading="lazy"
@@ -405,7 +423,7 @@
           <div class="col-12 col-sm-6 col-lg-4 mb-4 extra-card d-none">
             <div class="card shadow-lg hover-card h-100" data-aos="flip-left">
               <img
-                src="./assets/11.jpg"
+                src="img/11.jpg"
                 class="card-img-top"
                 alt="وصفة 5"
                 loading="lazy"
@@ -427,7 +445,7 @@
           <div class="col-12 col-sm-6 col-lg-4 mb-4 extra-card d-none">
             <div class="card shadow-lg hover-card h-100" data-aos="flip-left">
               <img
-                src="./assets/123.jpg"
+                src="img/123.jpg"
                 class="card-img-top"
                 alt="وصفة 6"
                 loading="lazy"
@@ -459,33 +477,43 @@
         </div>
       </div>
 
-      <!-- Modal -->
+      <!-- Recipe Modal -->
       <div
         class="modal fade"
         id="recipeModal"
         tabindex="-1"
         aria-labelledby="recipeModalLabel"
         aria-hidden="true"
+        style="z-index: 1999;"
+        data-bs-backdrop="static"
       >
         <div class="modal-dialog modal-dialog-centered modal-lg">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="recipeModalLabel">عنوان الوصفة</h5>
+          <div class="modal-content" style="border-radius: 20px; overflow: hidden; box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);">
+            <div class="modal-header" style="background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%); color: white; border-bottom: none; padding: 1.5rem;">
+              <h5 class="modal-title" id="recipeModalLabel" style="font-weight: 700; font-size: 1.5rem;">عنوان الوصفة</h5>
               <button
                 type="button"
-                class="btn-close"
+                class="btn-close btn-close-white"
                 data-bs-dismiss="modal"
                 aria-label="إغلاق"
               ></button>
             </div>
-            <div class="modal-body text-center">
+            <div class="modal-body text-center" style="padding: 2rem 1.5rem;">
               <img
                 id="recipeImage"
                 src=""
-                class="img-fluid rounded mb-3"
+                class="img-fluid rounded-3 mb-4"
                 alt="وصفة"
+                style="max-height: 400px; object-fit: cover; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);"
               />
-              <p id="recipeDescription" class="fs-5"></p>
+              <div class="recipe-details mt-4">
+                <h6 class="text-primary mb-3" style="font-weight: 600;">طريقة التحضير</h6>
+                <p id="recipeDescription" class="fs-5" style="line-height: 1.8; color: #444;"></p>
+              </div>
+            </div>
+            <div class="modal-footer" style="border-top: 1px solid #eee; justify-content: center;">
+              <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">إغلاق</button>
+              <button type="button" class="btn btn-primary">حفظ الوصفة</button>
             </div>
           </div>
         </div>
@@ -495,27 +523,33 @@
     <!-- About Us Section -->
     <section
       id="about-us"
-      class="bg-light py-5"
-      data-aos="fade-right"
-      data-aos-duration="1500"
+      class="py-5"
     >
       <div class="container">
         <div class="row align-items-center">
           <!-- Text Column -->
-          <div class="col-lg-6 text-center text-lg-start">
-            <h2 class="mb-4">من نحن</h2>
-            <p class="fs-5">
+          <div class="col-lg-6 text-center text-lg-start" data-aos="fade-right" data-aos-duration="1200">
+            <h2 class="mb-4 animate-border">من نحن</h2>
+            <p class="fs-5 animate-text">
               نحن فريق متخصص في تقديم أفضل الوصفات في مجالات الأدوية، الكيمياء،
               الغذاء، الزراعة وغيرها. هدفنا هو توفير المعرفة والمنتجات الأكثر
               فاعلية للمستخدمين.
             </p>
+            <p class="animate-text" data-aos-delay="200">
+              نسعى دائماً لتقديم محتوى علمي موثوق وحلول مبتكرة تساعد في تطوير المجالات
+              العلمية المختلفة وتسهيل الوصول إلى المعلومات الدقيقة.
+            </p>
+            <div class="mt-4" data-aos="fade-up" data-aos-delay="400">
+              <a href="Contact.html" class="btn btn-primary rounded-pill px-4 py-2 me-2">تواصل معنا</a>
+              <a href="#" class="btn btn-outline-primary rounded-pill px-4 py-2">اقرأ المزيد</a>
+            </div>
           </div>
           <!-- Image Column -->
-          <div class="col-lg-6 text-center">
+          <div class="col-lg-6 text-center" data-aos="fade-left" data-aos-duration="1200">
             <img
-              src="./assets/What-Does-a-Pharmaceutical-Scientist-Do_.jpg"
+              src="img/What-Does-a-Pharmaceutical-Scientist-Do_.jpg"
               alt="About Us Image"
-              class="img-fluid rounded-circle shadow-lg"
+              class="img-fluid rounded-circle shadow-lg floating-image"
               style="object-fit: cover; width: 500px; height: 500px"
             />
           </div>
@@ -634,14 +668,9 @@
         </div>
         <hr class="my-4 bg-white-50" />
         <div class="row">
-          <div class="col-md-6 text-left text-md-start">
+          <div class="col-md-12 text-center">
             <p class="small text-white-50 mb-0">
               تم التصميم و برمجه من خلال شركه GWTWeb
-            </p>
-          </div>
-          <div class="col-md-6 text-right text-md-end">
-            <p class="small text-white-50 mb-0">
-              © 2023 Vagabondscientist. جميع الحقوق محفوظة.
             </p>
           </div>
         </div>
@@ -742,6 +771,37 @@
           logoImg.style.animation = "pulse 2s infinite";
         }
       }
+      
+      // About Us section animations
+      function initAboutUsAnimations() {
+        const aboutSection = document.getElementById('about-us');
+        if (!aboutSection) return;
+        
+        const aboutTitle = aboutSection.querySelector('h2');
+        const aboutTexts = aboutSection.querySelectorAll('.animate-text');
+        const aboutImage = aboutSection.querySelector('img');
+        
+        if (aboutImage) {
+          aboutImage.classList.add('floating-image');
+        }
+        
+        // Add animation classes when section is visible
+        if (aboutTitle) {
+          setTimeout(() => {
+            aboutTitle.classList.add('animate-border');
+          }, 500);
+        }
+        
+        // Animate paragraphs with delay
+        if (aboutTexts.length > 0) {
+          aboutTexts.forEach((text, index) => {
+            setTimeout(() => {
+              text.style.opacity = '1';
+              text.style.transform = 'translateY(0)';
+            }, 800 + (300 * index));
+          });
+        }
+      }
 
       // Language switch functionality
       const translations = {
@@ -794,6 +854,9 @@
 
       // Show more recipes functionality
       document.addEventListener("DOMContentLoaded", function () {
+        // Initialize About Us section animations
+        initAboutUsAnimations();
+        
         const showMoreBtn = document.getElementById("showMoreBtn");
         if (showMoreBtn) {
           showMoreBtn.addEventListener("click", function () {
@@ -826,12 +889,41 @@
 
               const recipeModal = document.getElementById("recipeModal");
               if (recipeModal) {
+                // Remove any existing backdrop before showing new modal
+                const existingBackdrop = document.querySelector('.modal-backdrop');
+                if (existingBackdrop) {
+                  existingBackdrop.remove();
+                }
+                
+                // Clear body classes that might interfere with modal display
+                document.body.classList.remove('modal-open');
+                document.body.style.removeProperty('padding-right');
+                
+                // Initialize and show the modal
                 const modal = new bootstrap.Modal(recipeModal);
                 document.getElementById("recipeModalLabel").textContent = title;
                 document.getElementById("recipeImage").src = image;
-                document.getElementById("recipeDescription").textContent =
-                  description;
+                document.getElementById("recipeDescription").textContent = description;
+                
+                // Add event listener for when modal is fully shown
+                recipeModal.addEventListener('shown.bs.modal', function () {
+                  // Ensure the modal is above the backdrop
+                  const backdrop = document.querySelector('.modal-backdrop');
+                  if (backdrop) {
+                    backdrop.style.zIndex = '1500';
+                  }
+                  recipeModal.style.zIndex = '1600';
+                }, { once: true });
+                
                 modal.show();
+                
+                // Handle save recipe button
+                const saveButton = recipeModal.querySelector('.btn-primary');
+                if (saveButton) {
+                  saveButton.addEventListener('click', function() {
+                    alert('تم حفظ الوصفة بنجاح!');
+                  });
+                }
               }
             }
           });

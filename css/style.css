@@ -203,7 +203,7 @@ body {
               box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
           }
 .hero {
-    background-image: url('./assets/image.jpg');
+    background-image: url('../img/image.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -635,4 +635,138 @@ footer {
     font-weight: 500;
     letter-spacing: -0.5px;
     margin-top: -5px;
+}
+
+/* من نحن (About Us) Section Styling */
+#about-us {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e4e8eb 100%);
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+#about-us::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../assets/pattern.png');
+    opacity: 0.05;
+    z-index: 0;
+}
+
+#about-us .container {
+    position: relative;
+    z-index: 1;
+}
+
+#about-us h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+#about-us h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    right: 0;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
+    transition: width 1.5s ease;
+}
+
+#about-us h2.animate-border::after {
+    width: 100%;
+}
+
+#about-us p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 2rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+#about-us p.animate-text {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#about-us img {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    transition: all 0.8s ease;
+    transform: scale(0.95) rotate(-2deg);
+    border: 8px solid white;
+}
+
+#about-us img:hover {
+    transform: scale(1) rotate(0deg);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px) rotate(-2deg);
+    }
+    50% {
+        transform: translateY(-10px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(0px) rotate(-2deg);
+    }
+}
+
+#about-us .floating-image {
+    animation: float 6s ease-in-out infinite;
+}
+
+@media (max-width: 992px) {
+    #about-us {
+        padding: 60px 0;
+    }
+    
+    #about-us h2 {
+        font-size: 2rem;
+    }
+    
+    #about-us p {
+        font-size: 1.1rem;
+    }
+    
+    #about-us img {
+        max-width: 80%;
+        margin: 2rem auto 0;
+    }
+}
+
+@media (max-width: 768px) {
+    #about-us {
+        padding: 50px 0;
+    }
+    
+    #about-us h2 {
+        font-size: 1.8rem;
+        text-align: center;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    #about-us p {
+        font-size: 1rem;
+        text-align: center;
+    }
+    
+    #about-us .col-lg-6.text-center {
+        margin-top: 2rem;
+    }
 }
