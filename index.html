@@ -201,35 +201,6 @@
       </div>
     </section>
 
-    <!-- 3D Model Section -->
-    <section id="model-section" class="py-5">
-      <div class="container">
-        <h2 class="section-title mb-5">النموذج ثلاثي الأبعاد</h2>
-        <div class="row justify-content-center">
-          <div class="col-md-8">
-            <div class="model-container">
-              <model-viewer
-                src="https://modelviewer.dev/shared-assets/models/Astronaut.glb"
-                alt="A 3D model"
-                auto-rotate
-                camera-controls
-                ar
-                shadow-intensity="1"
-                exposure="0.5"
-                style="
-                  width: 100%;
-                  height: 400px;
-                  background-color: #f5f7fa;
-                  border-radius: 16px;
-                "
-              >
-              </model-viewer>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- Links Section -->
     <section class="kitchen-food-section py-5">
       <div class="container">
@@ -372,7 +343,7 @@
                   استفد من خصم 25% على جميع مستحضرات التجميل الطبيعية. العرض
                   ساري حتى نهاية الشهر!
                 </p>
-                <a href="#" class="btn btn-primary">عرض التفاصيل</a>
+                <a href="#" class="btn btn-primary">اشتري الآن</a>
               </div>
             </div>
           </div>
@@ -393,7 +364,7 @@
                   اشترِ أي منتجين من قسم المكياج واحصل على الثالث مجانًا. العرض
                   متاح لفترة محدودة!
                 </p>
-                <a href="#" class="btn btn-primary">عرض التفاصيل</a>
+                <a href="#" class="btn btn-primary">اشتري الآن</a>
               </div>
             </div>
           </div>
@@ -414,7 +385,7 @@
                   اكتشف مجموعتنا الجديدة من منتجات العناية بالبشرة التي تجمع بين
                   الفعالية والطبيعية. اطلب الآن!
                 </p>
-                <a href="#" class="btn btn-primary">عرض التفاصيل</a>
+                <a href="#" class="btn btn-primary">اشتري الآن</a>
               </div>
             </div>
           </div>
@@ -435,7 +406,7 @@
                   استمتع بخصم 30% على جميع منتجات العناية بالبشرة. لا تفوت
                   الفرصة!
                 </p>
-                <a href="#" class="btn btn-primary">عرض التفاصيل</a>
+                <a href="#" class="btn btn-primary">اشتري الآن</a>
               </div>
             </div>
           </div>
@@ -455,7 +426,7 @@
                   اكتشف مجموعتنا من المنتجات الطبيعية للعناية بالشعر التي تجمع
                   بين الفعالية والطبيعية.
                 </p>
-                <a href="#" class="btn btn-primary">عرض التفاصيل</a>
+                <a href="#" class="btn btn-primary">اشتري الآن</a>
               </div>
             </div>
           </div>
@@ -475,7 +446,7 @@
                   استفد من تخفيضات نهاية العام على جميع منتجات التجميل والعناية
                   بالبشرة.
                 </p>
-                <a href="#" class="btn btn-primary">عرض التفاصيل</a>
+                <a href="#" class="btn btn-primary">اشتري الآن</a>
               </div>
             </div>
           </div>
@@ -489,92 +460,6 @@
         </div>
       </div>
 
-      <!-- Offer Modal -->
-      <div
-        class="modal fade"
-        id="offerModal"
-        tabindex="-1"
-        aria-labelledby="offerModalLabel"
-        aria-hidden="true"
-        style="z-index: 11299"
-      >
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-          <div
-            class="modal-content"
-            style="
-              border-radius: 20px;
-              overflow: hidden;
-              box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-            "
-          >
-            <div
-              class="modal-header"
-              style="
-                background: linear-gradient(
-                  135deg,
-                  var(--primary-dark) 0%,
-                  var(--primary) 100%
-                );
-                color: white;
-                border-bottom: none;
-                padding: 1.5rem;
-              "
-            >
-              <h5
-                class="modal-title"
-                id="offerModalLabel"
-                style="font-weight: 700; font-size: 1.5rem"
-              >
-                تفاصيل العرض
-              </h5>
-              <button
-                type="button"
-                class="btn-close btn-close-white"
-                data-bs-dismiss="modal"
-                aria-label="إغلاق"
-              ></button>
-            </div>
-            <div class="modal-body text-center" style="padding: 2rem 1.5rem">
-              <img
-                id="offerImage"
-                src=""
-                class="img-fluid rounded-3 mb-4"
-                alt="عرض"
-                style="
-                  max-height: 400px;
-                  object-fit: cover;
-                  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-                "
-              />
-              <div class="offer-details mt-4">
-                <h6 class="text-primary mb-3" style="font-weight: 600">
-                  تفاصيل العرض
-                </h6>
-                <p
-                  id="offerDescription"
-                  class="fs-5"
-                  style="line-height: 1.8; color: #444"
-                ></p>
-              </div>
-            </div>
-            <div
-              class="modal-footer"
-              style="border-top: 1px solid #eee; justify-content: center"
-            >
-              <button
-                type="button"
-                class="btn btn-outline-secondary"
-                data-bs-dismiss="modal"
-              >
-                إغلاق
-              </button>
-              <button type="button" class="btn btn-primary">
-                استفد من العرض
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
 
     <!-- About Us Section -->
