@@ -1,159 +1,234 @@
-// تفعيل مكتبة AOS (Animation on Scroll)
-document.addEventListener("DOMContentLoaded", function () {
-  AOS.init({
-    duration: 1000, // ضبط مدة التأثير
-    easing: "ease-in-out", // نوع التأثير
-    disable: "mobile", // تعطيل التأثيرات على الجوال لتحسين الأداء
-    once: true, // تشغيل التأثير مرة واحدة فقط
-  });
+AOS.init();
 
-  // تطبيق التعديلات المتجاوبة عند تحميل الصفحة
-  adjustResponsiveElements();
-});
-// احصل على اسم الصفحة الحالية
-const currentPage = window.location.pathname.split("/").pop();
+// Function to adjust navbar responsively
+function adjustNavbar() {
+  const navbarCollapse = document.querySelector(".navbar-collapse");
+  const logoImg = document.querySelector(".logo-img");
+  const logoMain = document.querySelector(".logo-main");
+  const logoSubtitle = document.querySelector(".logo-subtitle");
+  const logoContainer = document.querySelector(".logo-container");
+  const logoText = document.querySelector(".logo-text");
+  const textEnd = document.querySelector(".text-end");
 
-// احصل على كل روابط التنقل
-const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
-
-navLinks.forEach((link) => {
-  const linkPage = link.getAttribute("href");
-
-  // إذا تطابق الرابط مع الصفحة الحالية، أضف له class "active"
-  if (linkPage === currentPage) {
-    link.classList.add("active");
-  } else {
-    link.classList.remove("active");
+  // Ensure logo container and text are always in a row
+  if (logoContainer) {
+    logoContainer.style.flexDirection = "row";
+    logoContainer.style.alignItems = "center";
   }
-});
 
-document.getElementById("showMoreBtn").addEventListener("click", function () {
-  const extraCards = document.querySelectorAll(".extra-card");
-  const btn = this;
-
-  if (btn.textContent === "عرض المزيد") {
-    // إظهار الكروت مع تأثير حركي
-    extraCards.forEach((card, index) => {
-      setTimeout(() => {
-        card.classList.remove("d-none");
-        card.style.opacity = "0";
-        card.style.transform = "translateY(20px)";
-        card.style.transition = "opacity 0.5s ease, transform 0.5s ease";
-
-        setTimeout(() => {
-          card.style.opacity = "1";
-          card.style.transform = "translateY(0)";
-        }, 50);
-      }, index * 100);
-    });
-    btn.textContent = "عرض أقل";
-
-    // التمرير إلى أول كارت مخفي
-    setTimeout(() => {
-      if (extraCards.length > 0) {
-        extraCards[0].scrollIntoView({ behavior: "smooth", block: "nearest" });
-      }
-    }, 100);
-  } else {
-    // إخفاء الكروت مع تأثير حركي
-    extraCards.forEach((card) => {
-      card.style.opacity = "0";
-      card.style.transform = "translateY(20px)";
-
-      setTimeout(() => {
-        card.classList.add("d-none");
-      }, 500);
-    });
-    btn.textContent = "عرض المزيد";
-
-    // التمرير إلى الزر
-    btn.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  if (logoText) {
+    logoText.style.flexDirection = "row";
+    logoText.style.alignItems = "center";
   }
-});
 
-// نختار كل أزرار "عرض الوصفة"
-const viewButtons = document.querySelectorAll(".btn-primary");
+  if (textEnd) {
+    textEnd.style.textAlign = "right";
+  }
 
-viewButtons.forEach((button) => {
-  button.addEventListener("click", function (e) {
-    e.preventDefault();
+  if (window.innerWidth < 576) {
+    // Mobile view
+    logoImg.style.width = "40px";
+    logoImg.style.height = "40px";
+    logoMain.style.fontSize = "1.1rem";
+    logoMain.style.whiteSpace = "nowrap";
+    logoSubtitle.style.fontSize = "0.7rem";
+    logoSubtitle.style.whiteSpace = "nowrap";
 
-    // نحدد الكارت الحالي
-    const card = this.closest(".card");
-
-    // نجلب البيانات (العنوان والصورة والوصف المخفي)
-    const title = card.querySelector(".card-text").innerText;
-    const description = card.querySelector(
-      ".recipe-full-description"
-    ).innerText;
-    const imageSrc = card.querySelector("img").src;
-
-    // تعبئة المودال
-    document.getElementById("recipeModalLabel").innerText = title;
-    document.getElementById("recipeDescription").innerText = description;
-    document.getElementById("recipeImage").src = imageSrc;
-
-    // عرض المودال
-    const recipeModal = new bootstrap.Modal(
-      document.getElementById("recipeModal")
-    );
-    recipeModal.show();
-  });
-});
-
-// وظيفة التعديلات المتجاوبة
-function adjustResponsiveElements() {
-  // تعديل قسم الهيرو بناءً على حجم الشاشة
-  const heroSection = document.getElementById("hero-section");
-  if (heroSection) {
-    if (window.innerWidth < 768) {
-      heroSection.style.backgroundAttachment = "scroll";
-    } else {
-      heroSection.style.backgroundAttachment = "fixed";
+    if (navbarCollapse) {
+      navbarCollapse.classList.add("navbar-mobile");
     }
-  }
 
-  // تعديل حجم الكروت إذا لزم الأمر
-  const cards = document.querySelectorAll(".card");
-  if (cards.length > 0) {
-    if (window.innerWidth < 576) {
-      cards.forEach((card) => {
-        const cardBody = card.querySelector(".card-body");
-        if (cardBody) {
-          cardBody.style.padding = "15px";
-        }
-        const cardImg = card.querySelector(".card-img-top");
-        if (cardImg) {
-          cardImg.style.height = "180px";
-        }
-      });
-    } else if (window.innerWidth < 768) {
-      cards.forEach((card) => {
-        const cardBody = card.querySelector(".card-body");
-        if (cardBody) {
-          cardBody.style.padding = "20px";
-        }
-        const cardImg = card.querySelector(".card-img-top");
-        if (cardImg) {
-          cardImg.style.height = "200px";
-        }
-      });
-    } else {
-      cards.forEach((card) => {
-        const cardBody = card.querySelector(".card-body");
-        if (cardBody) {
-          cardBody.style.padding = "";
-        }
-        const cardImg = card.querySelector(".card-img-top");
-        if (cardImg) {
-          cardImg.style.height = "";
-        }
-      });
+    // Add animation to logo
+    logoImg.style.animation = "pulse 2s infinite";
+  } else if (window.innerWidth < 768) {
+    // Tablet view
+    logoImg.style.width = "45px";
+    logoImg.style.height = "45px";
+    logoMain.style.fontSize = "1.2rem";
+    logoMain.style.whiteSpace = "nowrap";
+    logoSubtitle.style.fontSize = "0.75rem";
+    logoSubtitle.style.whiteSpace = "nowrap";
+
+    if (navbarCollapse) {
+      navbarCollapse.classList.remove("navbar-mobile");
     }
+
+    // Add animation to logo
+    logoImg.style.animation = "pulse 2s infinite";
+  } else if (window.innerWidth < 992) {
+    // Small desktop view
+    logoImg.style.width = "50px";
+    logoImg.style.height = "50px";
+    logoMain.style.fontSize = "1.3rem";
+    logoMain.style.whiteSpace = "nowrap";
+    logoSubtitle.style.fontSize = "0.8rem";
+    logoSubtitle.style.whiteSpace = "nowrap";
+
+    if (navbarCollapse) {
+      navbarCollapse.classList.remove("navbar-mobile");
+    }
+
+    // Add animation to logo
+    logoImg.style.animation = "pulse 2s infinite";
+  } else {
+    // Desktop view
+    logoImg.style.width = "60px";
+    logoImg.style.height = "60px";
+    logoMain.style.fontSize = "1.5rem";
+    logoMain.style.whiteSpace = "nowrap";
+    logoSubtitle.style.fontSize = "1rem";
+    logoSubtitle.style.whiteSpace = "nowrap";
+
+    if (navbarCollapse) {
+      navbarCollapse.classList.remove("navbar-mobile");
+    }
+
+    // Add animation to logo
+    logoImg.style.animation = "pulse 2s infinite";
   }
 }
 
-// تطبيق التعديلات المتجاوبة عند تغيير حجم النافذة
-window.addEventListener("resize", function () {
-  adjustResponsiveElements();
+// About Us section animations
+function initAboutUsAnimations() {
+  const aboutSection = document.getElementById("about-us");
+  if (!aboutSection) return;
+
+  const aboutTitle = aboutSection.querySelector("h2");
+  const aboutTexts = aboutSection.querySelectorAll(".animate-text");
+  const aboutImage = aboutSection.querySelector("img");
+
+  if (aboutImage) {
+    aboutImage.classList.add("floating-image");
+  }
+
+  // Add animation classes when section is visible
+  if (aboutTitle) {
+    setTimeout(() => {
+      aboutTitle.classList.add("animate-border");
+    }, 500);
+  }
+
+  // Animate paragraphs with delay
+  if (aboutTexts.length > 0) {
+    aboutTexts.forEach((text, index) => {
+      setTimeout(() => {
+        text.style.opacity = "1";
+        text.style.transform = "translateY(0)";
+      }, 800 + 300 * index);
+    });
+  }
+}
+
+// Language switch functionality
+const translations = {
+  ar: {
+    "nav-home": "الرئيسية",
+    "nav-agriculture": "الزراعية",
+    "nav-chemical": "الكيميائية",
+    "nav-contact": "اتصل بنا",
+    // Add more translations as needed
+  },
+  en: {
+    "nav-home": "Home",
+    "nav-agriculture": "Agriculture",
+    "nav-chemical": "Chemical",
+    "nav-contact": "Contact",
+    // Add more translations as needed
+  },
+};
+
+function setLang(lang) {
+  document.documentElement.lang = lang === "ar" ? "ar" : "en";
+  document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+  for (const key in translations[lang]) {
+    const el = document.querySelector(`[data-i18n="${key}"]`);
+    if (el) el.textContent = translations[lang][key];
+  }
+  document.getElementById("langSwitch").textContent =
+    lang === "ar" ? "EN" : "AR";
+  localStorage.setItem("lang", lang);
+}
+
+// Add event listener to language switch button
+if (document.getElementById("langSwitch")) {
+  document.getElementById("langSwitch").addEventListener("click", function () {
+    const current = localStorage.getItem("lang") || "ar";
+    setLang(current === "ar" ? "en" : "ar");
+  });
+}
+
+// Set language on page load
+window.addEventListener("DOMContentLoaded", function () {
+  setLang(localStorage.getItem("lang") || "ar");
+});
+
+// Call adjustNavbar on page load and window resize
+window.addEventListener("load", adjustNavbar);
+window.addEventListener("resize", adjustNavbar);
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Show More Button Functionality
+  const showMoreBtn = document.getElementById("showMoreBtn");
+  if (showMoreBtn) {
+    showMoreBtn.addEventListener("click", function () {
+      const extraCards = document.querySelectorAll(".extra-card");
+      extraCards.forEach((card) => {
+        card.classList.toggle("d-none");
+      });
+      this.textContent = this.textContent.includes("إظهار")
+        ? "عرض أقل"
+        : "إظهار المزيد";
+    });
+  }
+
+  // Modal Functionality
+  (function () {
+    // Remove any previous event listeners to avoid duplicates
+    const offerLinks = document.querySelectorAll(".card .btn-primary");
+    const offerModal = document.getElementById("offerModal");
+    let modalInstance = null;
+
+    offerLinks.forEach((link) => {
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+        const card = this.closest(".card");
+        const title = card.querySelector(".card-title").textContent;
+        const image = card.querySelector(".card-img-top").src;
+        const description = card.querySelector(
+          ".offer-full-description"
+        ).textContent;
+
+        document.getElementById("offerModalLabel").textContent = title;
+        document.getElementById("offerImage").src = image;
+        document.getElementById("offerDescription").textContent = description;
+
+        // Ensure z-index is high enough
+        offerModal.style.zIndex = 20000;
+        // Show modal
+        if (!modalInstance) {
+          modalInstance = new bootstrap.Modal(offerModal, {
+            backdrop: true,
+            keyboard: true,
+          });
+        }
+        modalInstance.show();
+      });
+    });
+
+    // Ensure modal closes and resets instance
+    offerModal.addEventListener("hidden.bs.modal", function () {
+      if (modalInstance) {
+        modalInstance.hide();
+        modalInstance = null;
+      }
+    });
+
+    // Ensure the action button works
+    const actionBtn = offerModal.querySelector(".btn.btn-primary");
+    if (actionBtn) {
+      actionBtn.onclick = function () {
+        alert("تم الاستفادة من العرض!\nOffer used!");
+      };
+    }
+  })();
 });

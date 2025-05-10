@@ -25,27 +25,12 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
     <link rel="stylesheet" href="css/style.css" />
-    <style>
-      /* Fix for modal overlay issues */
-      .modal-backdrop {
-        z-index: 1500 !important;
-      }
-      
-      .modal {
-        z-index: 1600 !important;
-      }
-      
-      .modal-open {
-        overflow: hidden;
-        padding-right: 0 !important;
-      }
-      
-      /* Ensure modal content is visible */
-      .modal-content {
-        position: relative;
-        z-index: 1700;
-      }
-    </style>
+
+    <!-- 3D Model Viewer Library -->
+    <script
+      type="module"
+      src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
+    ></script>
   </head>
 
   <body>
@@ -57,7 +42,7 @@
         <div class="logo-container">
           <div class="logo-text d-flex align-items-center" style="gap: 10px">
             <img
-              src="img/logo.jpg"
+              src="img/logo.png"
               alt="Logo"
               class="logo-img ms-2 rounded-circle"
               data-aos="fade-right"
@@ -68,7 +53,7 @@
                 class="logo-main m-0"
                 data-aos="fade-up"
                 data-aos-duration="1000"
-                style="color: var(--primary-dark);"
+                style="color: var(--primary-dark)"
               >
                 PGDA
               </h1>
@@ -76,7 +61,7 @@
                 class="logo-subtitle m-0"
                 data-aos="fade-up"
                 data-aos-duration="1200"
-                style="color: var(--primary);"
+                style="color: var(--primary)"
               >
                 للتنمية العلمية
               </p>
@@ -139,6 +124,42 @@
               data-aos-duration="800"
               data-aos-delay="400"
             >
+              <a
+                class="nav-link"
+                href="pharmaceutical.html"
+                data-i18n="nav-pharmaceutical"
+                >الصيدلية</a
+              >
+            </li>
+            <li
+              class="nav-item"
+              data-aos="fade-left"
+              data-aos-duration="800"
+              data-aos-delay="400"
+            >
+              <a
+                class="nav-link"
+                href="cosmetics.html"
+                data-i18n="nav-cosmetics"
+                >المكياج</a
+              >
+            </li>
+            <li
+              class="nav-item"
+              data-aos="fade-left"
+              data-aos-duration="800"
+              data-aos-delay="400"
+            >
+              <a class="nav-link" href="food.html" data-i18n="nav-food"
+                >الغذاء</a
+              >
+            </li>
+            <li
+              class="nav-item"
+              data-aos="fade-left"
+              data-aos-duration="800"
+              data-aos-delay="400"
+            >
               <a class="nav-link" href="Contact.html" data-i18n="nav-contact"
                 >اتصل بنا</a
               >
@@ -180,132 +201,143 @@
       </div>
     </section>
 
-    <section class="kitchen-food-section py-5">
+    <!-- 3D Model Section -->
+    <section id="model-section" class="py-5">
       <div class="container">
-        <h2 class="section-title mb-5">كل شيء عن المطبخ والغذاء</h2>
-
-        <div class="row g-4">
-          <!-- أدوات المطبخ -->
-          <div class="col-md-4 px-3" data-aos="fade-up" data-aos-delay="100">
-            <div class="kitchen-item card h-100 hover-card">
-              <img
-                src="img/Hcee4b696ece0433bb5bca7dc3193235d9.jpg"
-                alt="أداة مطبخ"
-                class="card-img-top"
-              />
-              <div class="card-body d-flex flex-column">
-                <h3 class="item-title">أدوات مبتكرة للمطبخ</h3>
-                <p class="item-description">
-                  اكتشف أدوات تساعدك في تحضير الطعام بسهولة وفي وقت أقل.
-                </p>
-                <div class="mt-auto">
-                  <button class="btn btn-primary w-100">اكتشف المزيد</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- نصائح غذائية -->
-          <div class="col-md-4 px-3" data-aos="fade-up" data-aos-delay="200">
-            <div class="kitchen-item card h-100 hover-card">
-              <img
-                src="img/1234.jpg"
-                alt="أطعمة صحية"
-                class="card-img-top"
-              />
-              <div class="card-body d-flex flex-column">
-                <h3 class="item-title">توجهات غذائية صحية</h3>
-                <p class="item-description">
-                  تعرف على الأنماط الغذائية الصحية التي تعزز حياتك اليومية.
-                </p>
-                <div class="mt-auto">
-                  <button class="btn btn-primary w-100">اقرأ المزيد</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- ديكورات المطبخ -->
-          <div class="col-md-4 px-3" data-aos="fade-up" data-aos-delay="300">
-            <div class="kitchen-item card h-100 hover-card">
-              <img
-                src="img/images (4).jpg"
-                alt="ديكور المطبخ"
-                class="card-img-top"
-              />
-              <div class="card-body d-flex flex-column">
-                <h3 class="item-title">ديكورات المطبخ العصرية</h3>
-                <p class="item-description">
-                  استلهم من أفكار ديكور المطبخ لجعل مساحتك أكثر راحة وجمالاً.
-                </p>
-                <div class="mt-auto">
-                  <button class="btn btn-primary w-100">استكشف الأفكار</button>
-                </div>
-              </div>
+        <h2 class="section-title mb-5">النموذج ثلاثي الأبعاد</h2>
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <div class="model-container">
+              <model-viewer
+                src="https://modelviewer.dev/shared-assets/models/Astronaut.glb"
+                alt="A 3D model"
+                auto-rotate
+                camera-controls
+                ar
+                shadow-intensity="1"
+                exposure="0.5"
+                style="
+                  width: 100%;
+                  height: 400px;
+                  background-color: #f5f7fa;
+                  border-radius: 16px;
+                "
+              >
+              </model-viewer>
             </div>
           </div>
         </div>
+      </div>
+    </section>
 
-        <div class="row g-4 mt-4">
-          <!-- مكونات غذائية عالمية -->
+    <!-- Links Section -->
+    <section class="kitchen-food-section py-5">
+      <div class="container">
+        <h2 class="section-title mb-5">روابط مهمة</h2>
+
+        <div class="row g-4">
+          <!-- Card 1: الزراعية -->
+          <div class="col-md-4 px-3" data-aos="fade-up" data-aos-delay="100">
+            <div class="kitchen-item card h-100 hover-card">
+              <img src="img/green.jpg" alt="الزراعية" class="card-img-top" />
+              <div class="card-body d-flex flex-column">
+                <h3 class="item-title">الزراعية</h3>
+                <p class="item-description">
+                  استكشف منتجات وخدمات زراعية عالية الجودة لدعم الزراعة
+                  المستدامة.
+                </p>
+                <div class="mt-auto">
+                  <a href="Agriculture.html" class="btn btn-primary w-100"
+                    >زور الصفحة</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: الكيميائية -->
+          <div class="col-md-4 px-3" data-aos="fade-up" data-aos-delay="200">
+            <div class="kitchen-item card h-100 hover-card">
+              <img
+                src="img/chemil.avif"
+                alt="الكيميائية"
+                class="card-img-top"
+              />
+              <div class="card-body d-flex flex-column">
+                <h3 class="item-title">الكيميائية</h3>
+                <p class="item-description">
+                  تعرف على المواد والمنتجات الكيميائية لتطبيقات متنوعة.
+                </p>
+                <div class="mt-auto">
+                  <a href="chemical.html" class="btn btn-primary w-100"
+                    >زور الصفحة</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: الصيدلية -->
+          <div class="col-md-4 px-3" data-aos="fade-up" data-aos-delay="300">
+            <div class="kitchen-item card h-100 hover-card">
+              <img
+                src="img/sectionparphc.jpg"
+                alt="الصيدلية"
+                class="card-img-top"
+              />
+              <div class="card-body d-flex flex-column">
+                <h3 class="item-title">الصيدلية</h3>
+                <p class="item-description">
+                  اكتشف الأدوية والمستحضرات الصيدلانية بمعايير جودة عالية.
+                </p>
+                <div class="mt-auto">
+                  <a href="pharmaceutical.html" class="btn btn-primary w-100"
+                    >زور الصفحة</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4: المكياج -->
           <div class="col-md-4 px-3" data-aos="fade-up" data-aos-delay="400">
             <div class="kitchen-item card h-100 hover-card">
               <img
-                src="img/456789.jpg"
-                alt="مكونات غذائية عالمية"
+                src="img/Cosmetic-Manufacturers-in-Savli (1).jpg"
+                alt="المكياج"
                 class="card-img-top"
               />
               <div class="card-body d-flex flex-column">
-                <h3 class="item-title">مكونات غذائية من ثقافات مختلفة</h3>
+                <h3 class="item-title">المكياج</h3>
                 <p class="item-description">
-                  اكتشف مكونات غذائية فريدة من ثقافات الطهي العالمية.
+                  استكشف مجموعة واسعة من منتجات المكياج لإطلالة مميزة.
                 </p>
                 <div class="mt-auto">
-                  <button class="btn btn-primary w-100">
-                    تعرف على المكونات
-                  </button>
+                  <a href="cosmetics.html" class="btn btn-primary w-100"
+                    >زور الصفحة</a
+                  >
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- مراجعات المنتجات -->
+          <!-- Card 5: الغذاء -->
           <div class="col-md-4 px-3" data-aos="fade-up" data-aos-delay="500">
             <div class="kitchen-item card h-100 hover-card">
               <img
-                src="img/61Z-oVOwYuL._AC_SL1001_.jpg"
-                alt="مراجعات منتجات"
+                src="img/sectionfood.webp"
+                alt="الغذاء"
                 class="card-img-top"
               />
               <div class="card-body d-flex flex-column">
-                <h3 class="item-title">مراجعات الأدوات الغذائية</h3>
+                <h3 class="item-title">الغذاء</h3>
                 <p class="item-description">
-                  اطلع على مراجعات الأدوات المطبخية الحديثة لتسهيل عملك في
-                  المطبخ.
+                  اطلع على منتجات غذائية صحية ومكونات طبيعية لوجباتك.
                 </p>
                 <div class="mt-auto">
-                  <button class="btn btn-primary w-100">اقرأ المراجعات</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- حدائق المطبخ -->
-          <div class="col-md-4 px-3" data-aos="fade-up" data-aos-delay="600">
-            <div class="kitchen-item card h-100 hover-card">
-              <img
-                src="img/45678.jfif"
-                alt="حديقة المطبخ"
-                class="card-img-top"
-              />
-              <div class="card-body d-flex flex-column">
-                <h3 class="item-title">حدائق المطبخ الصغيرة</h3>
-                <p class="item-description">
-                  كيف يمكنك زراعة الأعشاب الطازجة في مطبخك لإضافة نكهة طبيعية
-                  لأطباقك.
-                </p>
-                <div class="mt-auto">
-                  <button class="btn btn-primary w-100">ابدأ حديقتك</button>
+                  <a href="food.html" class="btn btn-primary w-100"
+                    >زور الصفحة</a
+                  >
                 </div>
               </div>
             </div>
@@ -314,7 +346,7 @@
       </div>
     </section>
 
-    <!-- Recipes Section -->
+    <!-- Offers and Advertisements Section -->
     <section
       id="recipes"
       class="py-5"
@@ -322,102 +354,88 @@
       data-aos-duration="1500"
     >
       <div class="container">
-        <h2 class="section-title">وصفات غذائية</h2>
+        <h2 class="section-title">عروض وإعلانات</h2>
         <div class="row g-4">
-          <!-- كارت 1 -->
+          <!-- Offer Card 1 -->
           <div class="col-12 col-sm-6 col-lg-4 mb-4">
             <div class="card shadow-lg hover-card h-100" data-aos="flip-left">
               <img
-                src="img/banana.jpg"
+                src="img/sabbar.jpg"
                 class="card-img-top"
-                alt="وصفة 1"
+                alt="عرض 1"
                 loading="lazy"
               />
               <div class="card-body">
-                <h5 class="card-title">وصفة غذائية</h5>
-                <p class="card-text">بان كيك موز وجوز</p>
-                <p class="recipe-full-description" style="display: none">
-                  نخلط البيض مع السكر والفانيلا ورشة الملح الهيل والقرفه بعد ذلك
-                  نضيف الحليب ونخلطهم جيداً ثم نضيف الطحين المخلوط بالكنج باودر
-                  بالتدريج ثم نتركهم ٥ دقائق نضع مقلاه على النار وننمسح بالزبده
-                  ونصب الخليط حتى يصبح فقاعات ويصبح لونها من الاسفل ذهبي ثم بعد
-                  الانتهاء من كل الكميه نحشوها بالموز والعسل والجوز
+                <h5 class="card-title">عرض خاص</h5>
+                <p class="card-text">خصم 25% على مستحضرات التجميل الطبيعية</p>
+                <p class="offer-full-description" style="display: none">
+                  استفد من خصم 25% على جميع مستحضرات التجميل الطبيعية. العرض
+                  ساري حتى نهاية الشهر!
                 </p>
-                <a href="#" class="btn btn-primary">عرض الوصفة</a>
+                <a href="#" class="btn btn-primary">عرض التفاصيل</a>
               </div>
             </div>
           </div>
 
-          <!-- كارت 2 -->
+          <!-- Offer Card 2 -->
           <div class="col-12 col-sm-6 col-lg-4 mb-4">
             <div class="card shadow-lg hover-card h-100" data-aos="flip-left">
               <img
-                src="img/pasta.jpg"
+                src="img/vc.webp"
                 class="card-img-top"
-                alt="وصفة 2"
+                alt="عرض 2"
                 loading="lazy"
               />
               <div class="card-body">
-                <h5 class="card-title">وصفة غذائية</h5>
-                <p class="card-text">باستا دجاج وطماطم</p>
-                <p class="recipe-full-description" style="display: none">
-                  نذوب الزبده على النار ثم نضيف لها الدجاج ونحركه لين يقرب يستوي
-                  ثم نضيف الفلفل ّ الأخضر والزيتون والفطر ونحرك لين يذبل الفلفل
-                  نضيف والصويا والاريجانو ونحرك شوي ثم نضيف صلصة الطماطم مع
-                  الكريمة من بوك نضيف المكرونه وآخر شي نضيف جبن الموزاريلا ونحرك
-                  لين تذوب وتقدم
+                <h5 class="card-title">عرض محدود</h5>
+                <p class="card-text">اشترِ 2 منتج واحصل على 1 مجانًا</p>
+                <p class="offer-full-description" style="display: none">
+                  اشترِ أي منتجين من قسم المكياج واحصل على الثالث مجانًا. العرض
+                  متاح لفترة محدودة!
                 </p>
-                <a href="#" class="btn btn-primary">عرض الوصفة</a>
+                <a href="#" class="btn btn-primary">عرض التفاصيل</a>
               </div>
             </div>
           </div>
 
-          <!-- كارت 3 -->
+          <!-- Offer Card 3 -->
           <div class="col-12 col-sm-6 col-lg-4 mb-4">
             <div class="card shadow-lg hover-card h-100" data-aos="flip-left">
               <img
-                src="img/images (1).jpg"
+                src="img/argan.jpg"
                 class="card-img-top"
-                alt="وصفة 3"
+                alt="عرض 3"
                 loading="lazy"
               />
               <div class="card-body">
-                <h5 class="card-title">وصفة غذائية</h5>
-                <p class="card-text">سلطة حمص وخضار</p>
-                <p class="recipe-full-description" style="display: none">
-                  نحضر طبق تقديم واسع ونخلط فيه الحمص، والطماطم، والخيار،
-                  والبصل، والجزر، والفلفل الأخضر. نقلب المكونات مع بعضهم البعض.
-                  نسكب عصير الليمون، والزيت على سطح الخليط السابق. نضيف الملح
-                  والكمون إلى سلطة الحمص. نقلب المزيج عدة مرات، كي تتداخل
-                  المكونات معًا، ونقدمها طازجة
+                <h5 class="card-title">إعلان جديد</h5>
+                <p class="card-text">مجموعة العناية بالبشرة الجديدة</p>
+                <p class="offer-full-description" style="display: none">
+                  اكتشف مجموعتنا الجديدة من منتجات العناية بالبشرة التي تجمع بين
+                  الفعالية والطبيعية. اطلب الآن!
                 </p>
-                <a href="#" class="btn btn-primary">عرض الوصفة</a>
+                <a href="#" class="btn btn-primary">عرض التفاصيل</a>
               </div>
             </div>
           </div>
 
-          <!-- الكروت المخفية -->
+          <!-- Hidden Offer Cards -->
           <div class="col-12 col-sm-6 col-lg-4 mb-4 extra-card d-none">
             <div class="card shadow-lg hover-card h-100" data-aos="flip-left">
               <img
-                src="img/images.jpg"
+                src="img/retinol.jpg"
                 class="card-img-top"
-                alt="وصفة 4"
+                alt="عرض 4"
                 loading="lazy"
               />
               <div class="card-body">
-                <h5 class="card-title">وصفة غذائية</h5>
-                <p class="card-text">متبل الفاصولياء البيضاء بالبنجر</p>
-                <p class="recipe-full-description" style="display: none">
-                  100 جرام فاصولياء بيضاء مسلوقة. 2 حبة بنجر متوسطة الحجم مقشرة
-                  ومسلوقة. ملعقة طعام طحينة. 2 ملعقة طعام زيت زيتون. عصير ½
-                  ليمونة. ¼ ملعقة صغيرة كمون. 10 جرامات حبة البركة. رشة ملح. رشة
-                  فلفل أسود. طريقة عمل متبل الفاصوليا البيضاء بالبنجر: - في
-                  الخلاط توضع جميع المكونات ما عدا حبة البركة ويتم الخلط إلى أن
-                  ينعم الخليط. تقدم الوصفة في طبق وتنثر حبة البركة وملعقة زيت
-                  الزيتون عليها، وتقدم مع ربع رغيف بلدي أو شريحتين توست بني.
+                <h5 class="card-title">عرض حصري</h5>
+                <p class="card-text">خصم 30% على منتجات العناية بالبشرة</p>
+                <p class="offer-full-description" style="display: none">
+                  استمتع بخصم 30% على جميع منتجات العناية بالبشرة. لا تفوت
+                  الفرصة!
                 </p>
-                <a href="#" class="btn btn-primary">عرض الوصفة</a>
+                <a href="#" class="btn btn-primary">عرض التفاصيل</a>
               </div>
             </div>
           </div>
@@ -425,21 +443,19 @@
           <div class="col-12 col-sm-6 col-lg-4 mb-4 extra-card d-none">
             <div class="card shadow-lg hover-card h-100" data-aos="flip-left">
               <img
-                src="img/11.jpg"
+                src="img/hedro.webp"
                 class="card-img-top"
-                alt="وصفة 5"
+                alt="عرض 5"
                 loading="lazy"
               />
               <div class="card-body">
-                <h5 class="card-title">وصفة غذائية</h5>
-                <p class="card-text">ميلك شيك تمر وموز</p>
-                <p class="recipe-full-description" style="display: none">
-                  ضعي الموز والزبادي والجوز وملعقة كبيرة من العسل في الخلاط.
-                  اخلط على سرعة منخفضة حتى تبدأ المكونات بالامتزاج. ثم ارفع
-                  السرعة إلى عالية واخلط حتى يصبح المزيج ناعمًا. للحصول على ميلك
-                  شيك أحلى، أضف ملعقة كبيرة أخرى من العسل. قدّمه فورًا.
+                <h5 class="card-title">إعلان مميز</h5>
+                <p class="card-text">منتجات طبيعية للعناية بالشعر</p>
+                <p class="offer-full-description" style="display: none">
+                  اكتشف مجموعتنا من المنتجات الطبيعية للعناية بالشعر التي تجمع
+                  بين الفعالية والطبيعية.
                 </p>
-                <a href="#" class="btn btn-primary">عرض الوصفة</a>
+                <a href="#" class="btn btn-primary">عرض التفاصيل</a>
               </div>
             </div>
           </div>
@@ -447,31 +463,25 @@
           <div class="col-12 col-sm-6 col-lg-4 mb-4 extra-card d-none">
             <div class="card shadow-lg hover-card h-100" data-aos="flip-left">
               <img
-                src="img/123.jpg"
+                src="img/houny.jpg"
                 class="card-img-top"
-                alt="وصفة 6"
+                alt="عرض 6"
                 loading="lazy"
               />
               <div class="card-body">
-                <h5 class="card-title">وصفة غذائية</h5>
-                <p class="card-text">
-                  شرائح كعك زبدة فول سوداني وقطع الشيكولاته
+                <h5 class="card-title">عرض موسمي</h5>
+                <p class="card-text">تخفيضات نهاية العام</p>
+                <p class="offer-full-description" style="display: none">
+                  استفد من تخفيضات نهاية العام على جميع منتجات التجميل والعناية
+                  بالبشرة.
                 </p>
-                <p class="recipe-full-description" style="display: none">
-                  اكسروا البسكويت إلى قطع متوسطة الحجم. في وعاء، اخلطوا الحليب
-                  المكثف المحلى مع الزبدة والكاكاو حتى تحصلوا على مزيج متجانس.
-                  أضيفوا البسكويت وقلبوا المزيج حتى تتغمس قطع البسكويت بالكامل.
-                  زيدوا زبدة الفول السوداني وقلبوا مجدداً. رصوا المزيج في قالب
-                  رغيف مغطى بورق نايلون. غطوه ولفوه جيداً. أدخلوه إلى الفريزر
-                  لمدة 3-4 ساعات. أخرجوه من الفريزر وقطعوه إلى شرائح بنفس الحجم.
-                </p>
-                <a href="#" class="btn btn-primary">عرض الوصفة</a>
+                <a href="#" class="btn btn-primary">عرض التفاصيل</a>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- زر إظهار المزيد -->
+        <!-- Show More Button -->
         <div class="text-center mt-4">
           <button id="showMoreBtn" class="btn btn-outline-primary">
             إظهار المزيد
@@ -479,20 +489,44 @@
         </div>
       </div>
 
-      <!-- Recipe Modal -->
+      <!-- Offer Modal -->
       <div
         class="modal fade"
-        id="recipeModal"
+        id="offerModal"
         tabindex="-1"
-        aria-labelledby="recipeModalLabel"
+        aria-labelledby="offerModalLabel"
         aria-hidden="true"
-        style="z-index: 1999;"
-        data-bs-backdrop="static"
+        style="z-index: 11299"
       >
         <div class="modal-dialog modal-dialog-centered modal-lg">
-          <div class="modal-content" style="border-radius: 20px; overflow: hidden; box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);">
-            <div class="modal-header" style="background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%); color: white; border-bottom: none; padding: 1.5rem;">
-              <h5 class="modal-title" id="recipeModalLabel" style="font-weight: 700; font-size: 1.5rem;">عنوان الوصفة</h5>
+          <div
+            class="modal-content"
+            style="
+              border-radius: 20px;
+              overflow: hidden;
+              box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            "
+          >
+            <div
+              class="modal-header"
+              style="
+                background: linear-gradient(
+                  135deg,
+                  var(--primary-dark) 0%,
+                  var(--primary) 100%
+                );
+                color: white;
+                border-bottom: none;
+                padding: 1.5rem;
+              "
+            >
+              <h5
+                class="modal-title"
+                id="offerModalLabel"
+                style="font-weight: 700; font-size: 1.5rem"
+              >
+                تفاصيل العرض
+              </h5>
               <button
                 type="button"
                 class="btn-close btn-close-white"
@@ -500,22 +534,43 @@
                 aria-label="إغلاق"
               ></button>
             </div>
-            <div class="modal-body text-center" style="padding: 2rem 1.5rem;">
+            <div class="modal-body text-center" style="padding: 2rem 1.5rem">
               <img
-                id="recipeImage"
+                id="offerImage"
                 src=""
                 class="img-fluid rounded-3 mb-4"
-                alt="وصفة"
-                style="max-height: 400px; object-fit: cover; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);"
+                alt="عرض"
+                style="
+                  max-height: 400px;
+                  object-fit: cover;
+                  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+                "
               />
-              <div class="recipe-details mt-4">
-                <h6 class="text-primary mb-3" style="font-weight: 600;">طريقة التحضير</h6>
-                <p id="recipeDescription" class="fs-5" style="line-height: 1.8; color: #444;"></p>
+              <div class="offer-details mt-4">
+                <h6 class="text-primary mb-3" style="font-weight: 600">
+                  تفاصيل العرض
+                </h6>
+                <p
+                  id="offerDescription"
+                  class="fs-5"
+                  style="line-height: 1.8; color: #444"
+                ></p>
               </div>
             </div>
-            <div class="modal-footer" style="border-top: 1px solid #eee; justify-content: center;">
-              <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">إغلاق</button>
-              <button type="button" class="btn btn-primary">حفظ الوصفة</button>
+            <div
+              class="modal-footer"
+              style="border-top: 1px solid #eee; justify-content: center"
+            >
+              <button
+                type="button"
+                class="btn btn-outline-secondary"
+                data-bs-dismiss="modal"
+              >
+                إغلاق
+              </button>
+              <button type="button" class="btn btn-primary">
+                استفد من العرض
+              </button>
             </div>
           </div>
         </div>
@@ -523,14 +578,15 @@
     </section>
 
     <!-- About Us Section -->
-    <section
-      id="about-us"
-      class="py-5"
-    >
+    <section id="about-us" class="py-5">
       <div class="container">
         <div class="row align-items-center">
           <!-- Text Column -->
-          <div class="col-lg-6 text-center text-lg-start" data-aos="fade-right" data-aos-duration="1200">
+          <div
+            class="col-lg-6 text-center text-lg-start"
+            data-aos="fade-right"
+            data-aos-duration="1200"
+          >
             <h2 class="mb-4 animate-border">من نحن</h2>
             <p class="fs-5 animate-text">
               نحن فريق متخصص في تقديم أفضل الوصفات في مجالات الأدوية، الكيمياء،
@@ -538,16 +594,36 @@
               فاعلية للمستخدمين.
             </p>
             <p class="animate-text" data-aos-delay="200">
-              نسعى دائماً لتقديم محتوى علمي موثوق وحلول مبتكرة تساعد في تطوير المجالات
-              العلمية المختلفة وتسهيل الوصول إلى المعلومات الدقيقة.
+              نسعى دائماً لتقديم محتوى علمي موثوق وحلول مبتكرة تساعد في تطوير
+              المجالات العلمية المختلفة وتسهيل الوصول إلى المعلومات الدقيقة.
             </p>
             <div class="mt-4" data-aos="fade-up" data-aos-delay="400">
-              <a href="Contact.html" class="btn btn-primary rounded-pill px-4 py-2 me-2">تواصل معنا</a>
-              <a href="#" class="btn btn-outline-primary rounded-pill px-4 py-2">اقرأ المزيد</a>
+              <a
+                href="Contact.html"
+                class="btn btn-primary rounded-pill px-4 py-2 me-2"
+                style="
+                  background-color: var(--primary-dark);
+                  border-color: var(--primary-dark);
+                "
+                >تواصل معنا</a
+              >
+              <a
+                href="#"
+                class="btn rounded-pill px-4 py-2"
+                style="
+                  color: var(--primary-dark);
+                  border-color: var(--primary-dark);
+                "
+                >اقرأ المزيد</a
+              >
             </div>
           </div>
           <!-- Image Column -->
-          <div class="col-lg-6 text-center" data-aos="fade-left" data-aos-duration="1200">
+          <div
+            class="col-lg-6 text-center"
+            data-aos="fade-left"
+            data-aos-duration="1200"
+          >
             <img
               src="img/What-Does-a-Pharmaceutical-Scientist-Do_.jpg"
               alt="About Us Image"
@@ -558,7 +634,7 @@
         </div>
       </div>
     </section>
-       <footer class="py-5">
+    <footer class="py-5">
       <div class="container py-4">
         <div class="row">
           <div class="col-lg-4 mb-4 mb-lg-0">
@@ -677,260 +753,10 @@
           </div>
         </div>
       </div>
-    </footer> 
+    </footer>
 
-   
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script src="script.js"></script>
-    <script>
-      AOS.init();
-
-      // Function to adjust navbar responsively
-      function adjustNavbar() {
-        const navbarCollapse = document.querySelector(".navbar-collapse");
-        const logoImg = document.querySelector(".logo-img");
-        const logoMain = document.querySelector(".logo-main");
-        const logoSubtitle = document.querySelector(".logo-subtitle");
-        const logoContainer = document.querySelector(".logo-container");
-        const logoText = document.querySelector(".logo-text");
-        const textEnd = document.querySelector(".text-end");
-
-        // Ensure logo container and text are always in a row
-        if (logoContainer) {
-          logoContainer.style.flexDirection = "row";
-          logoContainer.style.alignItems = "center";
-        }
-
-        if (logoText) {
-          logoText.style.flexDirection = "row";
-          logoText.style.alignItems = "center";
-        }
-
-        if (textEnd) {
-          textEnd.style.textAlign = "right";
-        }
-
-        if (window.innerWidth < 576) {
-          // Mobile view
-          logoImg.style.width = "40px";
-          logoImg.style.height = "40px";
-          logoMain.style.fontSize = "1.1rem";
-          logoMain.style.whiteSpace = "nowrap";
-          logoSubtitle.style.fontSize = "0.7rem";
-          logoSubtitle.style.whiteSpace = "nowrap";
-
-          if (navbarCollapse) {
-            navbarCollapse.classList.add("navbar-mobile");
-          }
-
-          // Add animation to logo
-          logoImg.style.animation = "pulse 2s infinite";
-        } else if (window.innerWidth < 768) {
-          // Tablet view
-          logoImg.style.width = "45px";
-          logoImg.style.height = "45px";
-          logoMain.style.fontSize = "1.2rem";
-          logoMain.style.whiteSpace = "nowrap";
-          logoSubtitle.style.fontSize = "0.75rem";
-          logoSubtitle.style.whiteSpace = "nowrap";
-
-          if (navbarCollapse) {
-            navbarCollapse.classList.remove("navbar-mobile");
-          }
-
-          // Add animation to logo
-          logoImg.style.animation = "pulse 2s infinite";
-        } else if (window.innerWidth < 992) {
-          // Small desktop view
-          logoImg.style.width = "50px";
-          logoImg.style.height = "50px";
-          logoMain.style.fontSize = "1.3rem";
-          logoMain.style.whiteSpace = "nowrap";
-          logoSubtitle.style.fontSize = "0.8rem";
-          logoSubtitle.style.whiteSpace = "nowrap";
-
-          if (navbarCollapse) {
-            navbarCollapse.classList.remove("navbar-mobile");
-          }
-
-          // Add animation to logo
-          logoImg.style.animation = "pulse 2s infinite";
-        } else {
-          // Desktop view
-          logoImg.style.width = "60px";
-          logoImg.style.height = "60px";
-          logoMain.style.fontSize = "1.5rem";
-          logoMain.style.whiteSpace = "nowrap";
-          logoSubtitle.style.fontSize = "1rem";
-          logoSubtitle.style.whiteSpace = "nowrap";
-
-          if (navbarCollapse) {
-            navbarCollapse.classList.remove("navbar-mobile");
-          }
-
-          // Add animation to logo
-          logoImg.style.animation = "pulse 2s infinite";
-        }
-      }
-      
-      // About Us section animations
-      function initAboutUsAnimations() {
-        const aboutSection = document.getElementById('about-us');
-        if (!aboutSection) return;
-        
-        const aboutTitle = aboutSection.querySelector('h2');
-        const aboutTexts = aboutSection.querySelectorAll('.animate-text');
-        const aboutImage = aboutSection.querySelector('img');
-        
-        if (aboutImage) {
-          aboutImage.classList.add('floating-image');
-        }
-        
-        // Add animation classes when section is visible
-        if (aboutTitle) {
-          setTimeout(() => {
-            aboutTitle.classList.add('animate-border');
-          }, 500);
-        }
-        
-        // Animate paragraphs with delay
-        if (aboutTexts.length > 0) {
-          aboutTexts.forEach((text, index) => {
-            setTimeout(() => {
-              text.style.opacity = '1';
-              text.style.transform = 'translateY(0)';
-            }, 800 + (300 * index));
-          });
-        }
-      }
-
-      // Language switch functionality
-      const translations = {
-        ar: {
-          "nav-home": "الرئيسية",
-          "nav-agriculture": "الزراعية",
-          "nav-chemical": "الكيميائية",
-          "nav-contact": "اتصل بنا",
-          // Add more translations as needed
-        },
-        en: {
-          "nav-home": "Home",
-          "nav-agriculture": "Agriculture",
-          "nav-chemical": "Chemical",
-          "nav-contact": "Contact",
-          // Add more translations as needed
-        },
-      };
-
-      function setLang(lang) {
-        document.documentElement.lang = lang === "ar" ? "ar" : "en";
-        document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
-        for (const key in translations[lang]) {
-          const el = document.querySelector(`[data-i18n="${key}"]`);
-          if (el) el.textContent = translations[lang][key];
-        }
-        document.getElementById("langSwitch").textContent =
-          lang === "ar" ? "EN" : "AR";
-        localStorage.setItem("lang", lang);
-      }
-
-      // Add event listener to language switch button
-      if (document.getElementById("langSwitch")) {
-        document
-          .getElementById("langSwitch")
-          .addEventListener("click", function () {
-            const current = localStorage.getItem("lang") || "ar";
-            setLang(current === "ar" ? "en" : "ar");
-          });
-      }
-
-      // Set language on page load
-      window.addEventListener("DOMContentLoaded", function () {
-        setLang(localStorage.getItem("lang") || "ar");
-      });
-
-      // Call adjustNavbar on page load and window resize
-      window.addEventListener("load", adjustNavbar);
-      window.addEventListener("resize", adjustNavbar);
-
-      // Show more recipes functionality
-      document.addEventListener("DOMContentLoaded", function () {
-        // Initialize About Us section animations
-        initAboutUsAnimations();
-        
-        const showMoreBtn = document.getElementById("showMoreBtn");
-        if (showMoreBtn) {
-          showMoreBtn.addEventListener("click", function () {
-            const extraCards = document.querySelectorAll(".extra-card");
-            extraCards.forEach((card) => {
-              card.classList.toggle("d-none");
-            });
-            showMoreBtn.textContent = showMoreBtn.textContent.includes("إظهار")
-              ? "عرض أقل"
-              : "إظهار المزيد";
-          });
-        }
-
-        // Recipe modal functionality
-        const recipeLinks = document.querySelectorAll(".btn-primary");
-        recipeLinks.forEach((link) => {
-          link.addEventListener("click", function (e) {
-            if (this.closest(".card")) {
-              e.preventDefault();
-              const card = this.closest(".card");
-              const title = card.querySelector(".card-text")
-                ? card.querySelector(".card-text").textContent
-                : "";
-              const image = card.querySelector(".card-img-top")
-                ? card.querySelector(".card-img-top").src
-                : "";
-              const description = card.querySelector(".recipe-full-description")
-                ? card.querySelector(".recipe-full-description").textContent
-                : "";
-
-              const recipeModal = document.getElementById("recipeModal");
-              if (recipeModal) {
-                // Remove any existing backdrop before showing new modal
-                const existingBackdrop = document.querySelector('.modal-backdrop');
-                if (existingBackdrop) {
-                  existingBackdrop.remove();
-                }
-                
-                // Clear body classes that might interfere with modal display
-                document.body.classList.remove('modal-open');
-                document.body.style.removeProperty('padding-right');
-                
-                // Initialize and show the modal
-                const modal = new bootstrap.Modal(recipeModal);
-                document.getElementById("recipeModalLabel").textContent = title;
-                document.getElementById("recipeImage").src = image;
-                document.getElementById("recipeDescription").textContent = description;
-                
-                // Add event listener for when modal is fully shown
-                recipeModal.addEventListener('shown.bs.modal', function () {
-                  // Ensure the modal is above the backdrop
-                  const backdrop = document.querySelector('.modal-backdrop');
-                  if (backdrop) {
-                    backdrop.style.zIndex = '1500';
-                  }
-                  recipeModal.style.zIndex = '1600';
-                }, { once: true });
-                
-                modal.show();
-                
-                // Handle save recipe button
-                const saveButton = recipeModal.querySelector('.btn-primary');
-                if (saveButton) {
-                  saveButton.addEventListener('click', function() {
-                    alert('تم حفظ الوصفة بنجاح!');
-                  });
-                }
-              }
-            }
-          });
-        });
-      });
-    </script>
   </body>
 </html>
